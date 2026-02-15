@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+}
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+.navbar a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+.logo {
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url(https://i.pinimg.com/1200x/5a/c1/29/5ac1294efe1f0b13f010b2cf20e2004a.jpg) center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    line-height: 1.1;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 14px 28px;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+
+/* PRODUCTS */
+.products {
+    padding: 120px 80px;
+}
+
+.products h2 {
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card p {
+    margin-top: 10px;
+}
+
+
+/* STORY */
+.story {
+    padding: 120px 80px;
+    background: #111;
+}
+
+.footer {
+  background-color: #000000;   /* dark blue */
+  padding: 60px 80px;
+  color: white;
+}
+
+/* FLEX CONTAINER */
+.footer-container {
+  display: flex;
+  justify-content: space-between;  /* spread columns */
+  flex-wrap: wrap;                 /* responsive */
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* EACH COLUMN */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+}
+
+/* HEADINGS */
+.footer-col h3 {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* LINKS */
+.footer-col a {
+  color: #d9e2ec;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-col a:hover {
+  color: white;
+}
+.rights{
+    padding: auto;
+}
