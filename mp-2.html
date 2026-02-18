@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urvora Runway</title>
+<link rel="stylesheet" href="mp-2.css">
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div class="loader">
+    <div class="loader-logo">URVORA</div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor"></div>
+<div class="scroll-progress"></div>
+
+<!-- PRODUCT MODAL -->
+<div class="product-modal">
+    <div class="modal-content">
+        <span class="close-modal">×</span>
+        <img id="modal-img">
+        <h3 id="modal-title"></h3>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">URVORA</div>
+
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav-links">
+        <a href="#">Shop</a>
+        <a href="#">Search</a>
+        <a href="#">Wishlist</a>
+        <a href="#">Cart</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>The Cult of Culture<br>Explore Urvora</h1>
+        <button>Explore Collection</button>
+    </div>
+</section>
+
+<!-- COLLECTION -->
+<section class="products">
+<h2>Collection</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://i.pinimg.com/1200x/61/c7/e2/61c7e2c1c5de485e981cf57d643c7bd4.jpg">
+<p>Technical Jacket</p>
+</div>
+
+<div class="card">
+<img src="https://i.pinimg.com/736x/c6/97/18/c6971882ba07e48aa7bc85a20fca3feb.jpg">
+<p>Urban Riding Suit</p>
+</div>
+
+<div class="card">
+<img src="https://i.pinimg.com/736x/b8/b5/7f/b8b57f3c7388adf65a5791a682ac4728.jpg">
+<p>Protective Hoodie</p>
+</div>
+
+</div>
+</section>
+
+<!-- ZARA -->
+<section class="items">
+<h2>Zara Trendy Fits</h2>
+
+<div class="Zara-section">
+<img src="https://i.pinimg.com/1200x/80/78/43/807843ff9c6e6d7d1b2ef453576761da.jpg">
+</div>
+
+<div class="items-grid">
+
+<div class="items-card">
+<img src="https://i.pinimg.com/1200x/0c/37/a7/0c37a758473113c6d3763f80b41f31de.jpg">
+<p>Zara Casual Shirt</p>
+</div>
+
+<div class="items-card">
+<img src="https://i.pinimg.com/1200x/af/c5/f3/afc5f335c72b59ce9fc7ac2ca8a434c1.jpg">
+<p>Zara Interlock Relaxed Fit Shirt</p>
+</div>
+
+<div class="items-card">
+<img src="https://i.pinimg.com/1200x/ef/a2/bc/efa2bc2c66390b462967754b899d16ba.jpg">
+<p>Zara Flowy Pocket Shirt</p>
+</div>
+
+</div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+<h2>Movement without compromise</h2>
+<p>Technical, protective and unapologetically feminine.</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<p>© Urvora Fashion House</p>
+</footer>
+
+
+<!-- ================= JS ================= -->
+
+<script>
+
+/* loader */
+window.onload=()=>document.querySelector(".loader").style.display="none";
+
+/* cursor */
+const cursor=document.querySelector(".cursor");
+window.addEventListener("mousemove",e=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+});
+
+/* scroll progress */
+window.addEventListener("scroll",()=>{
+const h=document.documentElement.scrollHeight-window.innerHeight;
+const p=(window.scrollY/h)*100;
+document.querySelector(".scroll-progress").style.width=p+"%";
+});
+
+/* navbar blur */
+window.addEventListener("scroll",()=>{
+document.querySelector(".navbar")
+.classList.toggle("scrolled",window.scrollY>50);
+});
+
+/* mobile menu */
+const hamburger=document.querySelector(".hamburger");
+const nav=document.querySelector(".nav-links");
+hamburger.onclick=()=>nav.classList.toggle("active");
+
+/* magnetic button */
+document.querySelectorAll("button").forEach(btn=>{
+btn.addEventListener("mousemove",e=>{
+const r=btn.getBoundingClientRect();
+const x=e.clientX-r.left-r.width/2;
+const y=e.clientY-r.top-r.height/2;
+btn.style.transform=`translate(${x*0.2}px,${y*0.2}px)`;
+});
+btn.addEventListener("mouseleave",()=>btn.style.transform="translate(0)");
+});
+
+/* reveal */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{ if(e.isIntersecting)e.target.classList.add("show");});
+},{threshold:0.2});
+document.querySelectorAll(".card,.items-card,.story")
+.forEach(el=>{el.classList.add("reveal-item");observer.observe(el);});
+
+/* product modal */
+const modal=document.querySelector(".product-modal");
+const modalImg=document.getElementById("modal-img");
+const modalTitle=document.getElementById("modal-title");
+
+document.querySelectorAll(".card,.items-card").forEach(card=>{
+card.onclick=()=>{
+modal.classList.add("active");
+modalImg.src=card.querySelector("img").src;
+modalTitle.textContent=card.querySelector("p").textContent;
+};
+});
+
+document.querySelector(".close-modal").onclick=()=>{
+modal.classList.remove("active");
+};
+
+</script>
+
+</body>
+</html>
