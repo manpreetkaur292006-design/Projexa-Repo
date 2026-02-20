@@ -2,21 +2,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(202, 202, 202);
 }
 
 #nav-div{
     padding: 10px;
     padding-bottom: 15px;
+    background-color: grey;
 }
 
 #nav-bar{
     position: sticky;
     display: flex;
-    justify-content: space-between;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 5px;
+    justify-content: space-between; 
+    padding: 0 20px;    
+    max-width: 1200px;
+    margin: 0 auto; 
 }
 
 #nav-bar a{
@@ -26,10 +26,66 @@
 }
 
 #nav-items{
-    word-spacing: 20px;
+    display: flex;     
+    gap: 30px;          
+    align-items: center;
 }
 
 #urvora{
     font-size: larger;
 }
 
+#decor-home-page{
+    height: 100vh;
+    background: url(https://i.pinimg.com/1200x/be/0a/30/be0a306e9d90e82b55308ad4f46d705b.jpg) center/cover;
+}
+
+#decor-collection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.products{
+    height: 500px;
+    width: 300px;
+    border-radius: 10px; 
+    background-size: contain;      
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f8f5f2;
+}
+
+#prod-1{
+    background: url(https://i.pinimg.com/1200x/a0/dd/32/a0dd322b0a3c477509338d19febf8eb9.jpg);
+}
+
+#prod-2{
+    background: url(https://i.pinimg.com/736x/b6/56/7a/b6567aad40622755ecf66e5455714ce8.jpg);
+}
+
+#prod-3{
+    background: url(https://i.pinimg.com/1200x/79/58/ee/7958eee2188a706bd43c87b21342ff61.jpg);
+}
+
+#prod-4{
+   background: url(https://i.pinimg.com/1200x/92/b1/c3/92b1c3770638c1f1d110b87f4aa053a7.jpg); 
+}
+
+#prod-5{
+    background: url(https://i.pinimg.com/736x/07/7e/30/077e303563ea81d0176193056b734732.jpg);
+}
+
+#prod-6{
+    background: url(https://i.pinimg.com/736x/7a/55/2c/7a552cfb54c978f8258ba22c11b13f20.jpg);
+}
+
+#prod-7{
+    background: url(https://i.pinimg.com/736x/52/53/8b/52538bda07971f4452234ee88b657590.jpg);
+}
+
+#prod-8{
+    background: url(https://i.pinimg.com/1200x/fa/1e/0e/fa1e0e99b06b057a3387dc003222242a.jpg)
+}
