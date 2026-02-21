@@ -89,3 +89,16 @@
 #prod-8{
     background: url(https://i.pinimg.com/1200x/fa/1e/0e/fa1e0e99b06b057a3387dc003222242a.jpg)
 }
+
+#decor-card-1{
+    height: 400px;
+    width: 1200px;
+    background: url(https://i.pinimg.com/736x/6e/e8/7e/6ee87e2734141be86bd4b2d881f6418d.jpg);
+    background-repeat: no-repeat;
+}
+
+#card-info{
+    height: 300px;
+    width: 200px;
+    border: 2px solid grey;
+}
