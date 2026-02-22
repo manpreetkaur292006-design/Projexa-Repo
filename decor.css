@@ -7,7 +7,7 @@
 #nav-div {
     padding: 10px;
     padding-bottom: 15px;
-    background-color: rgba(86, 82, 82, 0.9);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 #nav-bar {
@@ -18,7 +18,7 @@
     padding: 0 20px;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: rgba(101, 101, 101, 0.9);
+    background-color: rgba(27, 23, 23, 0.9);
     z-index: 1000;
 }
 
@@ -36,7 +36,11 @@
 }
 
 #urvora {
-    font-size: larger;
+    font-size: xx-large;
+    background-image: linear-gradient(to right, #f3ec78, #af4261);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #decor-home-page {
@@ -61,6 +65,7 @@
     padding: 15px 40px;
     font-size: 1.2rem;
     background: rgba(255,255,255,0.9);
+    opacity: 80%;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -130,11 +135,12 @@
     background: rgba(255,255,255,0.9);
     padding: 8px 12px;
     border-radius: 8px;
+    opacity: 85%;
     backdrop-filter: blur(10px);
 }
 
-.products p:nth-of-type(2) {
-    color: #ffa500;
+.products p{
+    color: #ff9100;
     font-size: 1.1rem;
     margin-bottom: 10px;
     font-weight: bold;
@@ -147,7 +153,7 @@
     background: rgba(255,255,255,0.9);
     padding: 8px 12px;
     border-radius: 8px;
-    backdrop-filter: blur(10px);
+    opacity: 85%;
 }
 
 .add-to-cart {
@@ -198,7 +204,7 @@
 }
 
 #prod-9{
-    background: url(https://i.pinimg.com/736x/15/8b/b2/158bb26d0d302eeca83d7d50370508c9.jpg);
+    background: url('https://i.pinimg.com/736x/15/8b/b2/158bb26d0d302eeca83d7d50370508c9.jpg');
 }
 
 #decor-card-1 {
@@ -255,6 +261,13 @@
     font-weight: bold;
     cursor: pointer;
     font-size: 1.1rem;
+}
+
+#decor-card-2{
+    background: url(https://i.pinimg.com/736x/34/ce/d0/34ced006ca495559f9a450dd82b80b69.jpg) center/cover no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
 }
 
 
