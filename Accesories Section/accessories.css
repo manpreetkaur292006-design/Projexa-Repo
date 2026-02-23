@@ -1,0 +1,171 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Georgia", serif;
+}
+
+/* Body */
+body {
+    background-color: #f3ede4;
+    color: #5a3a1b;
+}
+
+.main-navbar a {
+     margin-left: 30px;
+     text-decoration: none;
+     color: rgb(167, 126, 16);
+     font-size: 14px;
+ }
+
+ .logo {
+     font-weight: bold;
+     letter-spacing: 3px;
+ }
+
+/* Header */
+#header-section {
+    padding: 20px 40px;
+    border-bottom: 1px solid #c9b28c;
+}
+
+#main-title {
+    font-size: 32px;
+    font-weight: normal;
+}
+
+/* Navbar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #c9b28c;
+}
+
+/* Nav links */
+#nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+#nav-links li a {
+    text-decoration: none;
+    color: #7a4b1f;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+#nav-links li a:hover {
+    border-bottom: 2px solid #7a4b1f;
+}
+#nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+#main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #c9b28c;
+}
+#main-links {
+    display: flex;
+    gap: 40px;
+}
+
+#main-links li a:hover {
+    border-bottom: 2px solid #7a4b1f;
+}
+
+/* Icons */
+#nav-icons span {
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* Main Section */
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+}
+
+/* Watches Section */
+#watches-section {
+    max-width: 2500px;
+    height: 400px;
+    text-align: center;
+    background-color: #d1b17e;
+}
+
+/* Small label */
+#label {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Main heading */
+#heading-watches {
+    font-size: 42px;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+/* Description */
+#watch-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #6b4a2b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #heading-watches {
+        font-size: 30px;
+    }
+
+    #watch-description {
+        padding: 0 15px;
+    }
+}
+/* watches card */
+.products {
+    padding: 120px 80px;
+}
+
+.products h2 {
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card p {
+    margin-top: 10px;
+}
