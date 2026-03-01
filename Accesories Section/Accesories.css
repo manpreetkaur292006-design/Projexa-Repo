@@ -205,3 +205,72 @@ body {
     font-size: 0.95rem;
     color: var(--gray);
 }
+.section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 80 px 10%;
+    background-color: #d1b17e;
+    gap: 50px;
+}
+#PatekPhilippe{
+    max-width: 2500px;
+    height: 400px;
+    text-align: center;
+    background-color: #d1b17e;
+}
+.info-patek{
+    flex: 1;
+}
+.info-patek p{
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+    text-align: justify;
+}
+.img-patek{
+    flex: 1;
+    display:flex;
+    justify-content: flex-end;
+}
+.img-patek img {
+    max-width: 100%;
+    height:auto;
+    border-radius: 4px;
+    box-shadow: 15px 15px 40px beige;
+}
+.section{
+    flex-direction: column;
+    padding: 40px 5%;
+}
+.card img {
+    background: var(--light);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(30, 144, 255, 0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(30, 144, 255, 0.13);
+}
+
+.card img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card {
+    padding: 1rem;
+}
+
+.dest-card p {
+    font-size: 0.95rem;
+    color: var(--gray);
+}
