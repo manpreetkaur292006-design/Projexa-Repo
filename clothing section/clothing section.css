@@ -205,5 +205,5 @@
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 #hero-content-span{
-    color: black;
+    background:linear-gradiant(to right, black , gold);
 }
