@@ -135,8 +135,8 @@ body {
 }
 
 /* Info Sections */
-.info-patek p,
-.info-rolex p {
+.info-timex p,
+.info-titan p {
     font-family: 'Times New Roman', Times, serif;
     line-height: 1.8;
     font-size: 16px;
@@ -145,15 +145,15 @@ body {
 }
 
 /* Images */
-.img-patek img,
-.img-rolex img {
-    max-width: 100%;
-    height: auto;
+.img-timex img,
+.img-titan img {
+    width: 500px;
+    height: 500px;
     border-radius: 4px;
     box-shadow: 15px 15px 40px beige;
 }
 
-/* Items Section */
+/* Items Section(common for all section) */
 .items {
     padding: 80px 80px;
 }
@@ -187,14 +187,15 @@ body {
     margin-top: 10px;
 }
 
-/* Rolex & Patek IDs */
-#Rolex,
-#Patek\ Philippe { /* CHANGED HERE (space escaped in ID selector) */
+/* Titan ,Timex & jewellery IDs */
+#jewellery,
+#Titan,
+#Timex { /* CHANGED HERE (space escaped in ID selector) */
     max-width: 2500px;
     padding: 40px;
     text-align: center;
     background-color: #d1b17e;
-    height: 1500px;
+    height: 1100px;
 }
 
 /* Responsive */
@@ -220,4 +221,23 @@ body {
     .items-grid {
         grid-template-columns: repeat(1, 1fr); /* CHANGED HERE */
     }
+}
+/* Jewellery info section */
+.info-jewel p,
+.info-jewel p {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Images */
+.img-jewel img,
+.img-jewel img {
+    max-width: 100%;
+    height: 500px;
+    width: 500px;
+    border-radius: 4px;
+    box-shadow: 15px 15px 40px beige;
 }
