@@ -287,6 +287,40 @@
     text-align: center;
 }
 
+.pimg{
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 50;
+}
+
+#product-property p{
+    z-index: 100;
+    position: relative;
+    bottom: 120px;    
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+}
+
+#product-property div:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+#product-property{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    height: 200px;
+    margin-bottom: 80px;
+    transition: transform 0.3s  ease;
+    border-radius: 20px;
+}
 
 .footer {
   background-color: #000000;   /* dark blue */
