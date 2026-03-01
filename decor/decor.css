@@ -322,6 +322,69 @@
     border-radius: 20px;
 }
 
+#decor-card-4{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+#info-img img{
+    height: 500px;
+    width: 400px;
+    z-index: 60;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+#info-img{
+    transition: transform 0.3s  ease;
+    height: 500px;
+}
+
+#info-img:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+#info-img p{
+    z-index: 80;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    bottom: 295px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+    font-size: x-large;
+}
+
+#info-1{
+    background-color: grey;
+    color: white;
+    padding: 30px;
+    height: 350px;
+    width: 300px;
+    border-radius: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+    font-size: larger;
+    line-height: 30px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: transform 0.3s  ease;
+}
+
+#info-1 h2{
+    margin-bottom: 20px;
+    margin-top: 13px;
+}
+
+#info-1:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+
+
 .footer {
   background-color: #000000;   /* dark blue */
   padding: 60px 80px;
