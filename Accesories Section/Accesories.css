@@ -1,0 +1,276 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Georgia", serif;
+}
+
+/* Body */
+body {
+    background-color: #f3ede4;
+    color: #5a3a1b;
+}
+
+.main-navbar a {
+     margin-left: 30px;
+     text-decoration: none;
+     color: rgb(167, 126, 16);
+     font-size: 14px;
+ }
+
+ .logo {
+     font-weight: bold;
+     letter-spacing: 3px;
+ }
+
+/* Header */
+#header-section {
+    padding: 20px 40px;
+    border-bottom: 1px solid #c9b28c;
+}
+
+#main-title {
+    font-size: 32px;
+    font-weight: normal;
+}
+
+/* Navbar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #c9b28c;
+}
+
+/* Nav links */
+#nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+#nav-links li a {
+    text-decoration: none;
+    color: #7a4b1f;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+#nav-links li a:hover {
+    border-bottom: 2px solid #7a4b1f;
+}
+#nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+#main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #c9b28c;
+}
+#main-links {
+    display: flex;
+    gap: 40px;
+}
+
+#main-links li a:hover {
+    border-bottom: 2px solid #7a4b1f;
+}
+
+/* Icons */
+#nav-icons span {
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* Main Section */
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+}
+
+/* Watches Section */
+#watches-section {
+    max-width: 2500px;
+    height: 400px;
+    text-align: center;
+    background-color: #d1b17e;
+}
+
+/* Small label */
+#label {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Main heading */
+#heading-watches {
+    font-size: 42px;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+/* Description */
+#watch-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #6b4a2b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #heading-watches {
+        font-size: 30px;
+    }
+
+    #watch-description {
+        padding: 0 15px;
+    }
+}
+/* watches card */
+.watches {
+    padding: 120px 80px;
+}
+
+.watches h2 {
+    margin-bottom: 40px;
+}
+
+/* .grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card p {
+    margin-top: 10px;
+} */
+ /* watch section cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.card img {
+    background: var(--light);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(30, 144, 255, 0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(30, 144, 255, 0.13);
+}
+
+.card img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card {
+    padding: 1rem;
+}
+
+.dest-card p {
+    font-size: 0.95rem;
+    color: var(--gray);
+}
+.section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 80 px 10%;
+    background-color: #d1b17e;
+    gap: 50px;
+}
+#PatekPhilippe{
+    max-width: 2500px;
+    height: 400px;
+    text-align: center;
+    background-color: #d1b17e;
+}
+.info-patek{
+    flex: 1;
+}
+.info-patek p{
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+    text-align: justify;
+}
+.img-patek{
+    flex: 1;
+    display:flex;
+    justify-content: flex-end;
+}
+.img-patek img {
+    max-width: 100%;
+    height:auto;
+    border-radius: 4px;
+    box-shadow: 15px 15px 40px beige;
+}
+.section{
+    flex-direction: column;
+    padding: 40px 5%;
+}
+.card img {
+    background: var(--light);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(30, 144, 255, 0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(30, 144, 255, 0.13);
+}
+
+.card img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card {
+    padding: 1rem;
+}
+
+.dest-card p {
+    font-size: 0.95rem;
+    color: var(--gray);
+}
