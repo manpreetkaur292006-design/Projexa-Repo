@@ -5,8 +5,10 @@
     box-sizing: border-box;
 }
 
+
 #nav-div {
-    padding: 10px;
+    margin-left: 30px;
+    padding: 15px;
     padding-bottom: 15px;
     background-color: none;
 }
@@ -18,7 +20,7 @@
     justify-content: space-between;
     padding: 0 2px;
     max-width: 1200px;
-    margin: 0 2px;
+    margin: 0 35px;
     background-color: none;
     z-index: 1000;
 }
@@ -40,6 +42,7 @@
     font-size: xx-large;
 }
 
+
 #decor-home-lines{
     display: flex;
     flex-direction: column;
@@ -47,6 +50,7 @@
     padding-top: 180px;
     justify-content: center;
 }
+
 
 #decor-home-page {
     min-height: 100vh;
@@ -367,13 +371,20 @@
     height: 350px;
     width: 300px;
     border-radius: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,1);
     font-size: larger;
     line-height: 30px;
     text-align: center;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     transition: transform 0.3s  ease;
     margin-top: 65px;
+}
+
+#info-1 h2{
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+
+#info-1 p{
+    color: black;
 }
 
 #info-1 h2{
@@ -445,4 +456,11 @@
 
 .rights{
     padding: auto;
+}
+
+#bg1 img{
+    margin-top: 20px;
+    opacity: 90%;
+    height: 400px;
+    width: 1375px;
 }
