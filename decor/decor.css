@@ -7,7 +7,7 @@
 
 
 #nav-div {
-    margin-left: 30px;
+    margin: 20px 20px 15px 20px;
     padding: 15px;
     padding-bottom: 15px;
     background-color: none;
@@ -19,8 +19,9 @@
     display: flex;
     justify-content: space-between;
     padding: 0 2px;
-    max-width: 1200px;
-    margin: 0 35px;
+    max-width: calc(100%-40px);
+    margin: 0;
+    width: 100%;
     background-color: none;
     z-index: 1000;
 }
@@ -103,7 +104,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    padding: 60px 20px;
+    padding: 40px 20px;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -173,6 +174,11 @@
 
 .add-to-cart:hover {
     transform: scale(1.05);
+}
+
+#collections-head{
+    margin-top: 30px;
+    text-align: center;
 }
 
 #prod-1 { 

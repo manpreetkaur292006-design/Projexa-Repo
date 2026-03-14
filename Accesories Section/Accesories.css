@@ -12,30 +12,28 @@ body {
     color: #5a3a1b;
 }
 
-.main-navbar a {
-     margin-left: 30px;
-     text-decoration: none;
-     color: rgb(167, 126, 16);
-     font-size: 14px;
- }
-
- .logo {
-     font-weight: bold;
-     letter-spacing: 3px;
- }
-
-/* Header */
-#header-section {
-    padding: 20px 40px;
+/* Main Navbar */
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
     border-bottom: 1px solid #c9b28c;
 }
 
-#main-title {
-    font-size: 32px;
-    font-weight: normal;
+.main-navbar a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: rgb(167, 126, 16);
+    font-size: 14px;
 }
 
-/* Navbar */
+.logo {
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* Navigation Bar */
 #navbar {
     display: flex;
     justify-content: space-between;
@@ -61,26 +59,6 @@ body {
 #nav-links li a:hover {
     border-bottom: 2px solid #7a4b1f;
 }
-#nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-#main-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    border-bottom: 1px solid #c9b28c;
-}
-#main-links {
-    display: flex;
-    gap: 40px;
-}
-
-#main-links li a:hover {
-    border-bottom: 2px solid #7a4b1f;
-}
 
 /* Icons */
 #nav-icons span {
@@ -89,31 +67,22 @@ body {
     cursor: pointer;
 }
 
-/* Main Section */
-#main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    text-align: center;
-}
-
 /* Watches Section */
 #watches-section {
     max-width: 2500px;
-    height: 400px;
+    padding: 40px; /* CHANGED HERE (height removed, padding added) */
     text-align: center;
     background-color: #d1b17e;
 }
 
-/* Small label */
+/* Label */
 #label {
     font-size: 16px;
     letter-spacing: 2px;
     margin-bottom: 15px;
 }
 
-/* Main heading */
+/* Heading */
 #heading-watches {
     font-size: 42px;
     margin-bottom: 25px;
@@ -125,6 +94,108 @@ body {
     font-size: 16px;
     line-height: 1.8;
     color: #6b4a2b;
+    padding: 0 50px; /* CHANGED HERE */
+}
+
+/* Section common */
+.section {
+    display: flex;
+    flex-direction: column; /* CHANGED HERE (removed row conflict) */
+    gap: 30px;
+    padding: 40px 5%; /* CHANGED HERE (fixed 80 px → 40px) */
+    background-color: #d1b17e;
+}
+
+/* Grid for cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card */
+.card {
+    padding: 1rem;
+    background:#fefefe; /* CHANGED HERE (merged duplicate card rules) */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05); /* CHANGED HERE */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* Info Sections */
+.info-timex p,
+.info-titan p {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Images */
+.img-timex img,
+.img-titan img {
+    width: 500px;
+    height: 500px;
+    border-radius: 4px;
+    box-shadow: 15px 15px 40px beige;
+}
+
+/* Items Section(common for all section) */
+.items {
+    padding: 80px 80px;
+}
+
+.items-grid {
+    margin-top: 40px; /* CHANGED HERE */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.items-card {
+    padding: 10px;
+    background: rgba(222, 205, 170, 0.847);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.items-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1px 5px rgba(242, 201, 111, 0.847);
+}
+
+.items-card img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover; /* CHANGED HERE */
+}
+
+.items-card p {
+    margin-top: 10px;
+}
+
+/* Titan ,Timex & jewellery IDs */
+#jewellery,
+#Titan,
+#Timex { /* CHANGED HERE (space escaped in ID selector) */
+    max-width: 2500px;
+    padding: 40px;
+    text-align: center;
+    background-color: #d1b17e;
+    height: 1100px;
 }
 
 /* Responsive */
@@ -146,131 +217,27 @@ body {
     #watch-description {
         padding: 0 15px;
     }
-}
-/* watches card */
-.watches {
-    padding: 120px 80px;
-}
 
-.watches h2 {
-    margin-bottom: 40px;
+    .items-grid {
+        grid-template-columns: repeat(1, 1fr); /* CHANGED HERE */
+    }
 }
-
-/* .grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 40px;
-}
-
-.card img {
-    width: 100%;
-}
-
-.card p {
-    margin-top: 10px;
-} */
- /* watch section cards */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-}
-
-.card img {
-    background: var(--light);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(30, 144, 255, 0.07);
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-    position: relative;
-}
-
-.card:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 6px 24px rgba(30, 144, 255, 0.13);
-}
-
-.card img {
-    height: 400px;
-    object-fit: cover;
-    width: 100%;
-}
-
-.card {
-    padding: 1rem;
-}
-
-.dest-card p {
-    font-size: 0.95rem;
-    color: var(--gray);
-}
-.section{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 80 px 10%;
-    background-color: #d1b17e;
-    gap: 50px;
-}
-#PatekPhilippe{
-    max-width: 2500px;
-    height: 400px;
-    text-align: center;
-    background-color: #d1b17e;
-}
-.info-patek{
-    flex: 1;
-}
-.info-patek p{
+/* Jewellery info section */
+.info-jewel p,
+.info-jewel p {
     font-family: 'Times New Roman', Times, serif;
     line-height: 1.8;
     font-size: 16px;
     color: #333;
     text-align: justify;
 }
-.img-patek{
-    flex: 1;
-    display:flex;
-    justify-content: flex-end;
-}
-.img-patek img {
+
+/* Images */
+.img-jewel img,
+.img-jewel img {
     max-width: 100%;
-    height:auto;
+    height: 500px;
+    width: 500px;
     border-radius: 4px;
     box-shadow: 15px 15px 40px beige;
-}
-.section{
-    flex-direction: column;
-    padding: 40px 5%;
-}
-.card img {
-    background: var(--light);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(30, 144, 255, 0.07);
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-    position: relative;
-}
-
-.card:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 6px 24px rgba(30, 144, 255, 0.13);
-}
-
-.card img {
-    height: 400px;
-    object-fit: cover;
-    width: 100%;
-}
-
-.card {
-    padding: 1rem;
-}
-
-.dest-card p {
-    font-size: 0.95rem;
-    color: var(--gray);
 }
