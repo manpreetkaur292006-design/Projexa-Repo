@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    background-color: rgb(239, 239, 239);
+}
+
+#wrapper{
+    background-color: white;
+    color: rgb(0, 0, 0);
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    line-height: 25px;
+    height: 500px;
+    width: 860px;
+    justify-items: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#main-info{
+    padding-right: 50px;
+}
+
+img{
+    height: 400px;
+    width: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#images{
+    padding-left: 50px;
+}
+
+#prod-desc h1{
+    font-size: x-large;
+    margin-bottom: 10px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#Price{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+#prod-desc p{
+    text-align: center;
+}
+
+#btns{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+button{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(45deg, #000000, #585858);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: all ease;
+}
+
+button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    background: linear-gradient(45deg, #feb626, #fe3434);
+    color: white;
+}
+
+#pdetails p{
+    font-weight: bold;
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 10px;
+}
+
+#table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table{
+    border: 2px solid rgb(0, 0, 0);
+    height: 200px;
+    width: 400px;
+    text-align: center;
+}
+
+th{
+    border: 2px solid rgb(0, 0, 0);
+    background-color: #333333;
+    color: white;
+}
+
+td{
+    border: 2px solid rgb(0, 0, 0);
+}
+
+
