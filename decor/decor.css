@@ -5,9 +5,12 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
 
 #nav-div {
-    margin: 20px 20px 15px 20px;
+    margin: 0px 20px 15px 20px;
     padding: 15px;
     padding-bottom: 15px;
     background-color: none;
@@ -19,7 +22,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 2px;
-    max-width: calc(100%-40px);
+    max-width: calc(100% - 40px);
     margin: 0;
     width: 100%;
     background-color: none;
@@ -40,6 +43,7 @@
 }
 
 #urvora {
+    margin-top: 8px;
     font-size: xx-large;
 }
 
@@ -82,19 +86,19 @@
     transform: scale(1.05);
 }
 
-#decor-tagline {
+.decor-tagline {
     padding: 60px 20px;
     text-align: center;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-#decor-tagline h2 {
+.decor-tagline h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #333;
 }
 
-#decor-tagline p {
+.decor-tagline p {
     font-size: 1.5rem;
     color: #666;
     line-height: 1.6;
@@ -215,6 +219,9 @@
 
 #prod-9{
     background: url('https://i.pinimg.com/736x/15/8b/b2/158bb26d0d302eeca83d7d50370508c9.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255,255,255,0.9);
 }
 
 #decor-card-1 {
@@ -469,4 +476,9 @@
     opacity: 90%;
     height: 400px;
     width: 1375px;
+}
+
+a{
+    font-style: none;
+    text-decoration: none;
 }
