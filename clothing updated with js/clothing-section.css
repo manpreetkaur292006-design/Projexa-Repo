@@ -1,0 +1,650 @@
+/* ==========================================
+   URVORA — Clothing Section Stylesheet
+   No JavaScript. Modals use CSS :target trick.
+   ========================================== */
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+ 
+body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+ 
+/* ==========================================
+   NAVBAR
+   ========================================== */
+ 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent);
+}
+ 
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: 6px;
+  font-size: 22px;
+}
+ 
+.navbar a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+ 
+.navbar a:hover {
+  opacity: 0.6;
+}
+ 
+/* ==========================================
+   HERO
+   ========================================== */
+ 
+.hero {
+  height: 100vh;
+  background: url(https://i.pinimg.com/1200x/5a/c1/29/5ac1294efe1f0b13f010b2cf20e2004a.jpg) center / cover;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+}
+ 
+.hero-content h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  line-height: 1.05;
+  font-weight: 300;
+}
+ 
+.hero-span {
+  background: linear-gradient(to right, #ffffff, #c9a84c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+ 
+.hero-btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 36px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+ 
+.hero-btn:hover {
+  background: white;
+  color: black;
+}
+ 
+/* ==========================================
+   PRODUCTS
+   ========================================== */
+ 
+.products {
+  padding: 120px 80px;
+}
+ 
+.products h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+ 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+ 
+/* Cards are now <a> tags */
+.card {
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+ 
+.card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+ 
+.card:hover img {
+  transform: scale(1.05);
+}
+ 
+.card p {
+  margin-top: 12px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+  transition: color 0.2s;
+}
+ 
+.card:hover p {
+  color: #fff;
+}
+ 
+/* ==========================================
+   ITEMS / ZARA SECTION
+   ========================================== */
+ 
+.items {
+  padding: 80px 80px;
+}
+ 
+.items h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+ 
+.zara-banner {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  margin: 40px 0;
+}
+ 
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 20px;
+}
+ 
+/* Items cards are also <a> tags */
+.items-card {
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+ 
+.items-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+ 
+.items-card:hover img {
+  transform: scale(1.05);
+}
+ 
+.items-card p {
+  margin-top: 12px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+  transition: color 0.2s;
+}
+ 
+.items-card:hover p {
+  color: #fff;
+}
+ 
+/* ==========================================
+   STORY
+   ========================================== */
+ 
+.story {
+  padding: 120px 80px;
+  background: #0a0a0a;
+  text-align: center;
+}
+ 
+.story h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+ 
+.story p {
+  margin-top: 16px;
+  color: #888;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+ 
+/* ==========================================
+   FOOTER
+   ========================================== */
+ 
+.footer {
+  background-color: #000;
+  padding: 60px 80px;
+  border-top: 1px solid #1a1a1a;
+}
+ 
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+ 
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 180px;
+}
+ 
+.footer-col h3 {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #fff;
+}
+ 
+.footer-col a {
+  color: #555;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.2s;
+}
+ 
+.footer-col a:hover {
+  color: white;
+}
+ 
+#rights {
+  text-align: center;
+  padding: 30px 0 0;
+  border-top: 1px solid #1a1a1a;
+  margin-top: 40px;
+  color: #333;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+ 
+/* ==========================================
+   PRODUCT MODALS — CSS :target technique
+   ==========================================
+   HOW IT WORKS:
+   1. Every modal is hidden by default (display: none).
+   2. When the browser URL hash matches a modal's ID,
+      CSS :target makes it visible (display: flex).
+   3. Clicking a product card sets the hash → modal opens.
+   4. The close button is <a href="#collection"> which
+      moves the hash away → modal hides again.
+   No JavaScript required at all.
+   ========================================== */
+ 
+.modal-overlay {
+  display: none;               /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 999;
+  overflow-y: auto;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 20px;
+}
+ 
+/* Show modal when its ID is the current URL target */
+.modal-overlay:target {
+  display: flex;
+}
+ 
+.modal {
+  background: #0c0c0c;
+  border: 1px solid #222;
+  max-width: 900px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  animation: fadeUp 0.35s ease;
+}
+ 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+.modal-img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  display: block;
+}
+ 
+.modal-info {
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+ 
+.modal-close:hover {
+  opacity: 1;
+}
+ 
+.modal-tag {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 12px;
+}
+ 
+.modal-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+ 
+.modal-price {
+  font-size: 24px;
+  font-weight: 300;
+  color: #c9a84c;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+}
+ 
+.modal-desc {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+ 
+.modal-sizes {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+ 
+.size-btn {
+  padding: 8px 16px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+ 
+.size-btn:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+ 
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+.btn-primary {
+  display: block;
+  padding: 14px;
+  background: #fff;
+  color: #000;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  text-decoration: none;
+  text-align: center;
+}
+ 
+.btn-primary:hover {
+  opacity: 0.85;
+}
+ 
+.btn-secondary {
+  display: block;
+  padding: 14px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #444;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  text-decoration: none;
+  text-align: center;
+}
+ 
+.btn-secondary:hover {
+  border-color: #fff;
+}
+ 
+.modal-details {
+  margin-top: 28px;
+  border-top: 1px solid #1a1a1a;
+  padding-top: 20px;
+}
+ 
+.modal-details p {
+  font-size: 11px;
+  color: #555;
+  letter-spacing: 1px;
+  line-height: 2;
+}
+.items-card:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+.card:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+/* CART OVERLAY */
+#cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+#cart {
+  background: #0c0c0c;
+  color: #fff;
+  width: 350px;
+  max-width: 90%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+#cart h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  border-bottom: 1px solid #222;
+  padding: 10px 0;
+}
+
+.cart-item button {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+#checkout-btn {
+  background: #c9a84c;
+  border: none;
+  color: #000;
+  padding: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#close-cart {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 8px;
+  cursor: pointer;
+}
+.products-scroll {
+  padding: 80px;
+  background: #0a0a0a;
+}
+
+.products-scroll h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  width: 220px;
+  scroll-snap-align: start;
+  background: #111;
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
+  transform: scale(1.05);
+}
+.product-card button {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.product-card button:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+.product-card img {
+  width: 100%;
+  height: 280px; /* fixed height for all product images */
+  object-fit: cover; /* makes images fill the box without stretching */
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
