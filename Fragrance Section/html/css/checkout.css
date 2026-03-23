@@ -1,0 +1,235 @@
+/* body{
+background: linear-gradient(
+120deg,
+#e6cbb8,
+#d8b49c,
+#e6cbb8,
+#cfa889
+);
+
+background-size: 300% 300%;
+animation: gradientMove 12s ease infinite;
+min-height:100vh;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+body::before{
+content:"";
+position:fixed;
+top:-200px;
+right:-200px;
+
+width:600px;
+height:600px;
+
+background:radial-gradient(
+circle,
+rgba(255,255,255,0.35) 0%,
+rgba(255,255,255,0.05) 50%,
+transparent 70%
+);
+
+filter:blur(80px);
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background-image:url("https://www.transparenttextures.com/patterns/cream-paper.png");
+
+opacity:0.25;
+z-index:-2;
+} */
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #d8b4a4;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.35), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(120,70,50,0.35), transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(200,140,110,0.5), transparent 60%);
+  animation: moveBackground 18s ease-in-out infinite alternate;
+  transform: translateZ(0);
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #e7cfc2, #c48f79);
+  mix-blend-mode: soft-light;
+  z-index: -1;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.1) translate(-3%, 3%);
+  }
+  100% {
+    transform: scale(1.05) translate(3%, -2%);
+  }
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 25px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  z-index: 10;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+.checkout-container{
+max-width:1200px;
+margin:auto;
+padding:60px 20px;
+}
+
+.checkout-grid{
+display:grid;
+grid-template-columns:1fr 400px;
+gap:60px;
+}
+
+.checkout-left h2,
+.checkout-right h2{
+margin-bottom:20px;
+}
+
+form input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid rgba(0,0,0,0.2);
+background:#fff;
+}
+
+.payment-option{
+display:block;
+margin-bottom:10px;
+}
+
+.checkout-right{
+background:#ffffff80;
+padding:30px;
+border-radius:10px;
+}
+
+.payment-methods{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:20px;
+}
+
+.payment-card{
+display:flex;
+align-items:center;
+justify-content:space-between; 
+
+padding:22px 28px;
+background:#f1dfd3;
+border-radius:10px;
+border:1px solid rgba(0,0,0,0.08);
+
+cursor:pointer;
+transition:all 0.25s ease;
+}
+
+.payment-card:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+.payment-info{
+max-width:80%;  
+
+.payment-card input{
+transform:scale(1.8);  
+accent-color:#7a4e3b;
+margin-left:20px;
+}}
+
+.payment-title{
+font-size:18px;
+font-weight:600;
+display:block;
+margin-bottom:4px;
+}
+
+.payment-info p{
+font-size:14px;
+opacity:0.7;
+}
+
+.order-item{
+display:flex;
+justify-content:space-between;
+margin-bottom:15px;
+}
+
+.order-total{
+margin-top:30px;
+display:flex;
+justify-content:space-between;
+font-size:20px;
+font-weight:600;
+}
+
+.primary-btn{
+width:100%;
+margin-top:20px;
+padding:14px;
+background:#7a4e3b;
+color:white;
+border:none;
+cursor:pointer;
+}

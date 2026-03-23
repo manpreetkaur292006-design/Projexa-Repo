@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Checkout</title>
+
+<link rel="stylesheet" href="css/checkout.css">
+
+</head>
+<nav class="navbar">
+  
+      <!-- LEFT SIDE -->
+      <div class="nav-left">
+        <span class="logo">urvora</span>
+        
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="nav-right">
+        <a href="#" onclick="openMenu()">menu</a>
+        <a href="#">search</a>
+        <a href="wishlist.html">wishlist</a>
+        <a href="cart.html">cart</a>
+      </div>
+
+    </nav>
+<body>
+
+<div class="checkout-container">
+
+<h1>Checkout</h1>
+
+<div class="checkout-grid">
+
+<!-- SHIPPING DETAILS -->
+<div class="checkout-left">
+
+<h2>Shipping Information</h2>
+
+<form id="checkoutForm">
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="text" placeholder="Phone Number" required>
+
+<input type="text" placeholder="Address Line 1" required>
+
+<input type="text" placeholder="City" required>
+
+<input type="text" placeholder="State" required>
+
+<input type="text" placeholder="Postal Code" required>
+
+<h2>Payment Method</h2>
+
+<div class="payment-methods">
+
+<label class="payment-card">
+
+<div class="payment-info">
+<span class="payment-title">Cash On Delivery</span>
+<p>Pay when the product arrives</p>
+
+</div>
+
+<input type="radio" name="payment" value="cod" checked>
+
+</label>
+
+<label class="payment-card">
+
+<div class="payment-info">
+<span class="payment-title">Credit / Debit Card</span>
+<p>Secure card payment</p>
+</div>
+
+<input type="radio" name="payment" value="card">
+
+</label>
+
+<label class="payment-card">
+
+<div class="payment-info">
+<span class="payment-title">UPI</span>
+<p>Google Pay, PhonePe, Paytm</p>
+</div>
+
+<input type="radio" name="payment" value="upi">
+
+</label>
+
+</div>
+
+<button type="submit" class="primary-btn">
+PLACE ORDER
+</button>
+
+</form>
+
+</div>
+
+
+<!-- ORDER SUMMARY -->
+<div class="checkout-right">
+
+<h2>Your Order</h2>
+
+<div id="order-items"></div>
+
+<div class="order-total">
+<span>Total</span>
+<span>Rs. <span id="order-total">0</span></span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="javascript/checkout.js"></script>
+
+</body>
+</html>

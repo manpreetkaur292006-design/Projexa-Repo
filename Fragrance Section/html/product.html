@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Urvora Products</title>
+<link rel="stylesheet" href="css/product.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="index.html"><span class="logo" src="index.html">urvora</span></a>
+    
+  </div>
+
+  <div class="nav-right">
+    <a href="#" onclick="openMenu()">menu</a>
+    <a href="#">search</a>
+    <a href="wishlist.html">wishlist</a>
+    <a href="cart.html">cart</a>
+  </div>
+</nav>
+
+
+<section class="product-section">
+
+  <div class="product-layout">
+
+    <!-- FILTER SIDEBAR -->
+    <aside class="filter-sidebar">
+
+      <h2>Filter</h2>
+
+      <!-- BRAND -->
+      <div class="filter-group">
+        <p>Brand</p>
+        <label><input type="checkbox" value="Chanel" class="filter-brand"> Chanel</label>
+        <label><input type="checkbox" value="Dior" class="filter-brand"> Dior</label>
+        <label><input type="checkbox" value="Jean Paul Gaultier" class="filter-brand"> Jean Paul Gaultier</label>
+        <label><input type="checkbox" value="Bellavita" class="filter-brand"> Bellavita</label>
+        <label><input type="checkbox" value="Tom Ford" class="filter-brand"> Tom Ford</label>
+        <label><input type="checkbox" value="YSL" class="filter-brand"> YSL</label>
+        <label><input type="checkbox" value="Gucci" class="filter-brand"> Gucci</label>
+        <label><input type="checkbox" value="Armani" class="filter-brand"> Armani</label>
+        <label><input type="checkbox" value="Paco Rabanne" class="filter-brand"> Paco Rabanne</label>
+        <label><input type="checkbox" value="Versace" class="filter-brand"> Versace</label>
+        <label><input type="checkbox" value="Burberry" class="filter-brand"> Burberry</label>
+        <label><input type="checkbox" value="Mancera" class="filter-brand"> Mancera</label>
+        <label><input type="checkbox" value="Byredo" class="filter-brand"> Byredo</label>
+      </div>
+
+      <!-- CONCENTRATION -->
+      <div class="filter-group">
+        <p>Concentration</p>
+        <label><input type="checkbox" value="Parfum" class="filter-concentration"> Parfum</label>
+        <label><input type="checkbox" value="EDP" class="filter-concentration"> Eau De Parfum</label>
+        <label><input type="checkbox" value="EDT" class="filter-concentration"> Eau De Toilette</label>
+      </div>
+
+      <!-- SCENT FAMILY -->
+      <div class="filter-group">
+        <p>Scent Family</p>
+        <label><input type="checkbox" value="Floral" class="filter-family"> Floral</label>
+        <label><input type="checkbox" value="Woody" class="filter-family"> Woody</label>
+        <label><input type="checkbox" value="Fresh" class="filter-family"> Fresh</label>
+        <label><input type="checkbox" value="Gourmand" class="filter-family"> Gourmand</label>
+        <label><input type="checkbox" value="Amber" class="filter-family"> Amber</label>
+      </div>
+
+      <!-- GENDER -->
+      <div class="filter-group">
+        <p>Gender</p>
+        <label><input type="checkbox" value="Men" class="filter-gender"> Men</label>
+        <label><input type="checkbox" value="Women" class="filter-gender"> Women</label>
+        <label><input type="checkbox" value="Unisex" class="filter-gender"> Unisex</label>
+      </div>
+
+      <!-- PRICE -->
+      <div class="filter-group">
+        <p>Max Price</p>
+        <input type="range" min="1000" max="20000" step="500" value="20000" id="priceRange">
+        <span id="priceValue">20000</span>
+      </div>
+
+      <button class="clear-btn" onclick="clearFilters()">Clear Filters</button>
+
+
+    </aside>
+
+
+    <!-- PRODUCT GRID -->
+    <div class="product-content">
+      <div class="product-grid" id="productGrid">
+
+        <!-- PRODUCTS -->
+
+        <!-- LE BEAU -->
+        <div class="product-card"
+            data-name="Jean Paul Gaultier Le Beau Paradise Garden"
+            data-price="8999"
+            data-image="images/lebeau.png"
+            data-brand="Jean Paul Gaultier"
+            data-concentration="EDP"
+            data-family="Woody"
+            data-gender="Men"
+            data-notes="Green Notes, Watery Notes, Mint, Ginger">
+            <a href="lebeau.html"><img src="css/images/labeau.png"></a>
+            <h3>Le Beau Paradise Garden</h3>
+            <p>RS. 8,999</p>
+        </div>
+
+        <!-- COCO -->
+        <div class="product-card"
+          data-name="Chanel Coco"
+          data-price="14500"
+          data-image="images/coco.png"
+          data-brand="Chanel"
+          data-concentration="Parfum"
+          data-family="Floral"
+          data-gender="Women"
+          data-notes="Rose, Jasmine, Patchouli">
+          <a href="coco.html"><img src="css/images/coco.png"></a>
+          <h3>Coco Chanel</h3>
+          <p>RS. 14,499</p>
+        </div>
+
+        <!-- SAUVAGE -->
+        <div class="product-card"
+          data-name="Dior Sauvage"
+          data-price="12000"
+          data-image="images/product4.png"
+          data-brand="Dior"
+          data-concentration="EDT"
+          data-family="Fresh"
+          data-gender="Men"
+          data-notes="Bergamot, Pepper, Ambroxan">
+          <a href="sauvage.html"><img src="css/images/sauvage.png"></a>
+          <h3>Dior Sauvage</h3>
+          <p>RS. 11,999</p>
+        </div>
+
+        <!-- DATE WOMAN -->
+        <div class="product-card"
+          data-name="Bellavita Date Woman"
+          data-price="2999"
+          data-image="images/datewoman.png"
+          data-brand="Bellavita"
+          data-concentration="EDP"
+          data-family="Gourmand"
+          data-gender="Women"
+          data-notes="Vanilla, Caramel, Amber">
+          <a href="datewoman.html"><img src="css/images/datewoman.png"></a>
+          <h3>Date Woman</h3>
+          <p>RS. 2,999</p>
+        </div>
+
+        <!-- DIOR OUD -->
+        <div class="product-card"
+          data-name="Dior Oud Essence"
+          data-price="16500"
+          data-image="images/product5.png"
+          data-brand="Dior"
+          data-concentration="Parfum"
+          data-family="Amber"
+          data-gender="Unisex"
+          data-notes="Oud, Rose, Incense">
+          <a href="oud.html"><img src="css/images/oud.png"></a>
+          <h3>Dior Oud Essence</h3>
+          <p>RS. 16,499</p>
+        </div>
+
+        <!-- CHANEL NOIR -->
+        <div class="product-card"
+          data-name="Chanel Noir"
+          data-price="13500"
+          data-image="images/product6.png"
+          data-brand="Chanel"
+          data-concentration="EDP"
+          data-family="Woody"
+          data-gender="Women"
+          data-notes="Sandalwood, Musk, Vanilla">
+          <a href="noir.html"><img src="css/images/noir.png"></a>
+          <h3>Chanel Noir</h3>
+          <p>RS. 13,499</p>
+        </div>
+
+        <!-- TOM FORD -->
+        <div class="product-card"
+          data-name="Tom Ford Oud Wood"
+          data-price="18500"
+          data-image="images/tomford.png"
+          data-brand="Tom Ford"
+          data-concentration="Parfum"
+          data-family="Amber"
+          data-gender="Unisex"
+          data-notes="Oud, Cardamom, Tonka Bean">
+          <a href="oudwood.html"><img src="css/images/oudwood.png"></a>
+          <h3>Tom Ford Oud Wood</h3>
+          <p>RS. 18,499</p>
+        </div>
+
+        <!-- YSL -->
+        <div class="product-card"
+          data-name="YSL Y Eau De Parfum"
+          data-price="13900"
+          data-image="images/ysl.png"
+          data-brand="YSL"
+          data-concentration="EDP"
+          data-family="Woody"
+          data-gender="Men"
+          data-notes="Apple, Sage, Tonka Bean">
+          <a href="ysl.html"><img src="css/images/ysl.png"></a>
+          <h3>YSL Y Eau De Parfum</h3>
+          <p>RS. 13,899</p>
+        </div>
+
+        <!-- GUCCI -->
+        <div class="product-card"
+          data-name="Gucci Bloom"
+          data-price="12500"
+          data-image="images/gucci.png"
+          data-brand="Gucci"
+          data-concentration="EDT"
+          data-family="Floral"
+          data-gender="Women"
+          data-notes="Tuberose, Jasmine, Rangoon Creeper">
+          <a href="bloom.html"><img src="css/images/bloom.png"></a>
+          <h3>Gucci Bloom</h3>
+          <p>RS. 12,499</p>
+        </div>
+
+        <!-- ARMANI --> 
+         <div class="product-card" 
+         data-brand="Armani" 
+         data-concentration="EDP" 
+         data-family="Fresh" 
+         data-gender="Women" 
+         data-price="13200"> 
+         <a href="myway.html"><img src="css/images/myway.png"></a>
+         <h3>Armani My Way</h3> 
+         <p>RS. 13,199</p> 
+        </div> 
+
+        <!-- PACO RABANNE --> 
+         <div class="product-card" 
+         data-brand="Paco Rabanne" 
+         data-concentration="Parfum" 
+         data-family="Gourmand" 
+         data-gender="Men" 
+         data-price="14900"> 
+         <a href="million.html"><img src="css/images/million.png"></a> 
+         <h3>1 Million Parfum</h3> 
+         <p>RS. 14,899</p> 
+        </div> 
+
+        <!-- VERSACE --> 
+         <div class="product-card" 
+         data-brand="Versace" 
+         data-concentration="EDT" 
+         data-family="Fresh" 
+         data-gender="Men" 
+         data-price="11500"> 
+         <a href="eros.html"><img src="css/images/eros.png"></a> 
+         <h3>Versace Eros</h3> 
+         <p>RS. 11,499</p> 
+        </div> 
+
+        <!-- BURBERRY --> 
+         <div class="product-card" 
+         data-brand="Burberry" 
+         data-concentration="EDP" 
+         data-family="Floral" 
+         data-gender="Women" 
+         data-price="10900"> 
+         <a href="her.html"><img src="css/images/her.png"></a> 
+         <h3>Burberry Her</h3> 
+         <p>RS. 10,899</p> 
+        </div> 
+
+        <!-- MANCERA --> 
+         <div class="product-card" 
+         data-brand="Mancera" 
+         data-concentration="Parfum" 
+         data-family="Gourmand" 
+         data-gender="Unisex" 
+         data-price="17500"> 
+         <a href="instantcrush.html"><img src="css/images/instant crush.png"></a> 
+         <h3>Mancera Instant Crush</h3> 
+         <p>RS. 17,499</p> 
+        </div> 
+
+        <!-- BYREDO --> 
+         <div class="product-card" 
+         data-brand="Byredo" 
+         data-concentration="EDP" 
+         data-family="Woody" 
+         data-gender="Unisex" 
+         data-price="19500"> 
+         <a href="gypsywater.html"><img src="css/images/gypsy water.png"></a> 
+         <h3>Byredo Gypsy Water</h3> 
+         <p>RS. 19,499</p> 
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="menu-overlay" id="menuOverlay">
+
+  <div class="menu-top">
+    <span class="close-btn" onclick="closeMenu()">✕</span>
+    <span class="menu-title">urvora-menu</span>
+
+    <div class="menu-right-top">
+      <span>wishlist</span>
+      <span>cart</span>
+    </div>
+  </div>
+
+  <div class="menu-content">
+
+    <div class="menu-left">
+
+      <div class="menu-section">
+        <p class="section-title">By Concentration</p>
+        <ul>
+          <li>Parfum</li>
+          <li>Eau De Parfum</li>
+          <li>Eau De Toilette</li>
+          <li>Eau De Cologne</li>
+          <li>Eau Fraiche</li>
+        </ul>
+      </div>
+
+      <div class="menu-section">
+        <p class="section-title">By Scent Family (Notes)</p>
+        <ul>
+          <li>Floral</li>
+          <li>Woody</li>
+          <li>Oriental (Amber)</li>
+          <li>Fresh</li>
+          <li>Citrus</li>
+          <li>Aromatic</li>
+          <li>Chypre</li>
+          <li>Gourmand</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="menu-right">
+      <img src="images/menu1.jpg">
+      <img src="images/menu2.jpg">
+      <img src="images/menu3.jpg">
+    </div>
+
+  </div>
+
+</div>
+
+<script src="javascript/product.js"></script>
+</body>
+</html>

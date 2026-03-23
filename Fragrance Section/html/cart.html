@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart</title>
+
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html"><span class="logo" src="index.html">urvora</span></a>
+            
+        </div>
+
+        <div class="nav-right">
+          <a href="#" onclick="openMenu()">menu</a>
+          <a href="#">search</a>
+          <a href="wishlist.html">wishlist</a>
+          <a href="cart.html">cart</a>
+        </div>
+    </nav>
+
+  <section class="cart-container">
+    <h1 class="cart-heading">Your Cart</h1>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-summary">
+      <div class="total-row">
+        <span>Total</span>
+        <span>Rs. <span id="cart-total">0</span></span>
+      </div>
+
+      <a href="checkout.html"><button class="primary-btn" onclick="checkout()">
+        PROCEED TO CHECKOUT
+      </button></a>
+    </div>
+  </section>
+
+  <script src="javascript/cart.js"></script>
+</body>
+</html>

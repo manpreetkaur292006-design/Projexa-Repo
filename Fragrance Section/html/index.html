@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>urvora | For Moments That Stay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <section class="hero">
+
+    <nav class="navbar">
+
+      <div class="nav-left">
+        <span class="logo">URVORA</span>
+        
+      </div>
+
+      <div class="nav-right">
+        <a href="#" onclick="openMenu()">menu</a>
+        <a href="#">search</a>
+        <a href="wishlist.html">wishlist</a>
+        <a href="cart.html">cart</a>
+      </div>
+
+    </nav>
+
+      <div class="hero-content">
+        <h1>For Moments That Stay.</h1>
+      </div>
+
+      <div class="scroll-down" onclick="scrollToNext()">
+        <span>SCROLL DOWN</span>
+        <div class="line"></div>
+      </div>
+
+  </section>
+
+  <section class="luxury-section" id="luxurySection">
+
+    <h1 class="bg-name">Carolina Herrera<br> Good Girl <br>Eau De Par-fum</h1>
+
+    <div class="product-wrapper">
+      <img src="css/Images/goodgirl.png" class="product-img" id="productImage">
+    </div>
+
+    <div class="price-tag">
+      Rs. 8,499
+    </div>
+
+  </section>
+
+  <section class="gap">
+    <br>
+    <br>
+  </section>
+
+  <section class="shop-section">
+
+    <div class="shop-header">
+      <h1 class="shop-title">PERFUME SHOP</h1>
+
+      <div class="shop-right">
+        <a href="product.html" class="see-all">See All</a>
+
+        <div class="slider-controls">
+          <span onclick="prevSlide()">&lt; PREV</span>
+          <span>|</span>
+          <span onclick="nextSlide()">NEXT &gt;</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="slider-wrapper">
+      <div class="slider" id="slider">
+
+        <div class="slide">
+
+          <div class="product-card">
+            <div class="top-line">
+              <p class="product-name">
+                Jean Paul Gaultier Le Beau Paradise Garden Eau De Parfum
+              </p>
+              <span class="size">75ml</span>
+            </div>
+            <a href="lebeau.html"><img src="css/Images/labeau.png"></a>
+            <p class="price">RS. 8,999</p>
+          </div>
+
+          <div class="product-card">
+            <div class="top-line">
+              <p class="product-name">BELLAVITA Date Woman</p>
+              <span class="size">100ml</span>
+            </div>
+            <a href="datewoman.html"><img src="css/Images/datewoman.png"></a>
+            <p class="price">RS. 2,999</p>
+          </div>
+
+          <div class="product-card">
+            <div class="top-line">
+              <p class="product-name">CHANEL</p>
+              <span class="size">100ml</span>
+            </div>
+            <a href="coco.html"><img src="css/Images/coco.png"></a>
+            <p class="price">RS. 14,499</p>
+          </div>
+
+        </div>
+
+        <div class="slide">
+
+          <div class="product-card">
+            <div class="top-line">
+              <p class="product-name">Mancera Instant Crush</p>
+              <span class="size">100ml</span>
+            </div>
+            <img src="css/images/instant crush.png">
+            <p class="price">RS. 17,499</p>
+          </div>
+
+          <div class="product-card">
+            <div class="top-line">
+              <p class="product-name">Armani My Way</p>
+              <span class="size">100ml</span>
+            </div>
+            <img src="css/Images/myway.png">
+            <p class="price">RS. 13,199</p>
+          </div>
+
+          <div class="product-card">
+            <div class="top-line">
+              <p class="product-name">YSL Y </p>
+              <span class="size">100ml</span>
+            </div>
+            <img src="css/Images/ysl.png">
+            <p class="price">RS. 13,899</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <div class="menu-overlay" id="menuOverlay">
+
+    <div class="menu-top">
+      <span class="close-btn" onclick="closeMenu()">✕</span>
+      <span class="menu-title">urvora-menu</span>
+
+    <div class="menu-right-top">
+      <span>wishlist</span>
+      <span>cart</span>
+    </div>
+  </div>
+
+
+    <div class="menu-left">
+
+      <div class="menu-section">
+        <p class="section-title">By Concentration</p>
+        <ul>
+          <li>Parfum</li>
+          <li>Eau De Parfum</li>
+          <li>Eau De Toilette</li>
+          <li>Eau De Cologne</li>
+          <li>Eau Fraiche</li>
+        </ul>
+      </div>
+
+      <div class="menu-section">
+        <p class="section-title">By Scent Family (Notes)</p>
+        <ul>
+          <li>Floral</li>
+          <li>Woody</li>
+          <li>Oriental (Amber)</li>
+          <li>Fresh</li>
+          <li>Citrus</li>
+          <li>Aromatic</li>
+          <li>Chypre</li>
+          <li>Gourmand</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="menu-right">
+      <img src="images/menu1.jpg">
+      <img src="images/menu2.jpg">
+      <img src="images/menu3.jpg">
+    </div>
+
+  </div>
+
+</div>
+
+  <script>
+
+  function scrollToNext() {
+      document.getElementById("nextSection")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+
+  const productImg = document.getElementById("productImage");
+const bgName = document.querySelector(".bg-name");
+
+window.addEventListener("scroll", () => {
+
+  const section = document.getElementById("luxurySection");
+  if (!section) return;
+
+  const rect = section.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  const sectionCenter = rect.top + rect.height / 2;
+  const viewportCenter = windowHeight / 2;
+
+  let distance = Math.abs(viewportCenter - sectionCenter);
+
+  let progress = 1 - Math.min(distance / windowHeight, 1);
+
+  const scaleValue = 1 + progress * 2.8;
+
+  productImg.style.transform = `scale(${scaleValue})`;
+
+  bgName.style.opacity = progress;
+  bgName.style.transform = `scale(${0.9 + progress * 0.2})`;
+
+});
+
+
+
+  let currentIndex = 0;
+  const slider = document.getElementById("slider");
+  const slides = document.querySelectorAll(".slide");
+
+  function updateSlider() {
+    slider.classList.add("fade");
+
+    setTimeout(() => {
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      slider.classList.remove("fade");
+    }, 200);
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+
+  function openMenu() {
+    document.getElementById("menuOverlay").classList.add("active");
+
+    document.querySelectorAll("body > *:not(.menu-overlay)")
+      .forEach(el => el.classList.add("page-blur"));
+
+    const items = document.querySelectorAll(".menu-section li");
+
+    items.forEach((item, index) => {
+      item.style.opacity = "0";
+      item.style.transform = "translateY(20px)";
+      item.style.transition = "none";
+
+      setTimeout(() => {
+        item.style.transition = "all 0.5s ease";
+        item.style.opacity = "1";
+        item.style.transform = "translateY(0)";
+      }, 200 + index * 120);
+    });
+  }
+
+  function closeMenu() {
+    document.getElementById("menuOverlay").classList.remove("active");
+
+    document.querySelectorAll(".page-blur")
+      .forEach(el => el.classList.remove("page-blur"));
+  }
+</script>
+
+</body>
+</html>

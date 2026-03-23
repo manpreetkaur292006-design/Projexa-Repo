@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CHANEL Noir</title>
+  <link rel="stylesheet" href="css/product-detail.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="index.html"><span class="logo" src="index.html">urvora</span></a>
+    
+  </div>
+
+  <div class="nav-right">
+    <a href="#" onclick="openMenu()">menu</a>
+    <a href="#">search</a>
+    <a href="wishlist.html">wishlist</a>
+    <a href="cart.html">cart</a>
+  </div>
+</nav>
+
+<section class="product-wrapper">
+
+  <div class="product-container">
+
+    <div class="product-left">
+      <img src="css/images/noir.png" alt="">
+    </div>
+
+    <div class="product-right">
+
+      <h1>
+        Chanel Noir <br>
+        Eau De Parfum
+      </h1>
+
+      <h2>RS. 13,499</h2>
+
+      <p class="description">
+        Chanel Noir Eau De Parfum is a rich and mysterious fragrance that opens with a
+        soft elegance, unfolding into deeper spicy and woody accords. This sensual scent
+        is ideal for nights out, special occasions, or whenever you want an unforgettable
+        warm aura with a refined character.
+      </p>
+
+      <ul class="notes">
+        <li><strong>Top Notes:</strong> Grapefruit, Orange Blossom</li>
+        <li><strong>Middle Notes:</strong> Jasmine, Rose, Lily</li>
+        <li><strong>Base Notes:</strong> Patchouli, Sandalwood, Vanilla</li>
+      </ul>
+
+      <a href="#" class="show-details" onclick="openDetails()">SHOW DETAILS</a>
+
+      <div class="purchase-row">
+
+        <div class="format">
+          <label>Format and Quantity</label>
+          <select>
+            <option>75ml</option>
+            <option>125ml</option>
+          </select>
+        </div>
+
+        <div class="quantity-box">
+          <button class="qty-btn" onclick="decreaseQty()">−</button>
+          <input type="text" id="quantityInput" value="1" readonly>
+          <button class="qty-btn" onclick="increaseQty()">+</button>
+        </div>
+
+      </div>
+
+      <button class="buy-btn"onclick="buyNow('Chanel Coco Noir Eau De Parfum',13499,'css/images/noir.png','100ml',1)">BUY NOW</button>
+
+    </div>
+
+  </div>
+
+  <button class="wishlist-btn" onclick="toggleWishlist()">
+  <span id="wishlistIcon">♡</span>
+  Add to Wishlist
+</button>
+
+</section>
+
+<div class="details-overlay" id="detailsOverlay" onclick="closeDetails()"></div>
+
+<div class="details-panel" id="detailsPanel">
+
+  <button class="close-btn" onclick="closeDetails()">✕</button>
+
+  <h2>PRODUCT<br>DETAILS</h2>
+
+  <div class="details-content">
+    <div class="detail-row">
+      <span>PERFUME NAME:</span>
+      <p>Chanel Noir</p>
+    </div>
+
+    <div class="detail-row">
+      <span>TOP NOTES:</span>
+      <p>Grapefruit, Orange Blossom</p>
+    </div>
+
+    <div class="detail-row">
+      <span>TYPE:</span>
+      <p>Eau De Parfum (EDP)</p>
+    </div>
+
+    <div class="detail-row">
+      <span>FRAGRANCE FAMILY:</span>
+      <p>Floral Woody Oriental</p>
+    </div>
+
+    <div class="detail-row">
+      <span>GENDER:</span>
+      <p>Women</p>
+    </div>
+
+    <div class="detail-row">
+      <span>LONGEVITY:</span>
+      <p>7-10 Hours (Moderate to High)</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="menu-overlay" id="menuOverlay">
+
+  <div class="menu-top">
+    <span class="close-btn" onclick="closeMenu()">✕</span>
+    <span class="menu-title">urvora-menu</span>
+
+    <div class="menu-right-top">
+      <span>wishlist</span>
+      <span>cart</span>
+    </div>
+  </div>
+
+  <div class="menu-content">
+
+    <div class="menu-left">
+
+      <div class="menu-section">
+        <p class="section-title">By Concentration</p>
+        <ul>
+          <li>Parfum</li>
+          <li>Eau De Parfum</li>
+          <li>Eau De Toilette</li>
+          <li>Eau De Cologne</li>
+          <li>Eau Fraiche</li>
+        </ul>
+      </div>
+
+      <div class="menu-section">
+        <p class="section-title">By Scent Family (Notes)</p>
+        <ul>
+          <li>Floral</li>
+          <li>Woody</li>
+          <li>Oriental (Amber)</li>
+          <li>Fresh</li>
+          <li>Citrus</li>
+          <li>Aromatic</li>
+          <li>Chypre</li>
+          <li>Gourmand</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="menu-right">
+      <img src="images/menu1.jpg">
+      <img src="images/menu2.jpg">
+      <img src="images/menu3.jpg">
+    </div>
+
+  </div>
+
+<script>
+  function increaseQty() {
+  const input = document.getElementById("quantityInput");
+  input.value = parseInt(input.value) + 1;
+}
+
+function decreaseQty() {
+  const input = document.getElementById("quantityInput");
+  if (parseInt(input.value) > 1) {
+    input.value = parseInt(input.value) - 1;
+  }
+}
+
+function openDetails() {
+  document.getElementById("detailsOverlay").classList.add("active");
+  document.getElementById("detailsPanel").classList.add("active");
+}
+
+function closeDetails() {
+  document.getElementById("detailsOverlay").classList.remove("active");
+  document.getElementById("detailsPanel").classList.remove("active");
+}
+
+function openMenu() {
+    document.getElementById("menuOverlay").classList.add("active");
+
+    document.querySelectorAll("body > *:not(.menu-overlay)")
+      .forEach(el => el.classList.add("page-blur"));
+
+    const items = document.querySelectorAll(".menu-section li");
+
+    items.forEach((item, index) => {
+      item.style.opacity = "0";
+      item.style.transform = "translateY(20px)";
+      item.style.transition = "none";
+
+      setTimeout(() => {
+        item.style.transition = "all 0.5s ease";
+        item.style.opacity = "1";
+        item.style.transform = "translateY(0)";
+      }, 200 + index * 120);
+    });
+  }
+
+  function closeMenu() {
+    document.getElementById("menuOverlay").classList.remove("active");
+
+    document.querySelectorAll(".page-blur")
+      .forEach(el => el.classList.remove("page-blur"));
+  }
+
+  const productId = "chanel-noir"; 
+
+function toggleWishlist() {
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  const index = wishlist.indexOf(productId);
+  const btn = document.querySelector(".wishlist-btn");
+  const icon = document.getElementById("wishlistIcon");
+
+  if (index > -1) {
+    wishlist.splice(index, 1);
+    btn.classList.remove("active");
+    icon.textContent = "♡";
+  } else {
+    wishlist.push(productId);
+    btn.classList.add("active");
+    icon.textContent = "♥";
+  }
+
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+}
+
+window.onload = function() {
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+  if (wishlist.includes(productId)) {
+    document.querySelector(".wishlist-btn").classList.add("active");
+    document.getElementById("wishlistIcon").textContent = "♥";
+  }
+}
+
+function buyNow(name, price, image, size, quantity) {
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let product = {
+    name: name,
+    price: price,
+    image: image,
+    size: size,
+    quantity: quantity
+  };
+
+  cart.push(product);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  window.location.href = "cart.html";
+}
+</script>
+
+</body>
+</html>
