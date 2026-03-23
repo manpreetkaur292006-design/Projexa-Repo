@@ -1,0 +1,292 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Georgia", serif;
+}
+
+/* Body */
+body {
+    background-color: #f3ede4;
+    color: #5a3a1b;
+}
+
+/* Main Navbar */
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #c9b28c;
+}
+
+.main-navbar a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: rgb(167, 126, 16);
+    font-size: 14px;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #c9b28c;
+}
+
+/* Nav links */
+#nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+#nav-links li a {
+    text-decoration: none;
+    color: #7a4b1f;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+#nav-links li a:hover {
+    border-bottom: 2px solid #7a4b1f;
+}
+
+/* Icons */
+#nav-icons span {
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* Watches Section */
+#watches-section {
+    max-width: 2500px;
+    padding: 40px; /* CHANGED HERE (height removed, padding added) */
+    text-align: center;
+    background-color: #d1b17e;
+}
+
+/* Label */
+#label {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Heading */
+#heading-watches {
+    font-size: 42px;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+/* Description */
+#watch-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #6b4a2b;
+    padding: 0 50px; /* CHANGED HERE */
+}
+
+/* Section common */
+.section {
+    display: flex;
+    flex-direction: column; /* CHANGED HERE (removed row conflict) */
+    gap: 30px;
+    padding: 40px 5%; /* CHANGED HERE (fixed 80 px → 40px) */
+    background-color: #d1b17e;
+}
+
+/* Grid for cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card */
+.card {
+    padding: 1rem;
+    background:#fefefe; /* CHANGED HERE (merged duplicate card rules) */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05); /* CHANGED HERE */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* Info Sections */
+.info-timex p,
+.info-titan p {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Images */
+.img-timex img,
+.img-titan img {
+    width: 500px;
+    height: 500px;
+    border-radius: 4px;
+    box-shadow: 15px 15px 40px beige;
+}
+
+/* Items Section(common for all section) */
+.items {
+    padding: 80px 80px;
+}
+
+.items-grid {
+    margin-top: 40px; /* CHANGED HERE */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.items-card {
+    padding: 10px;
+    background: rgba(222, 205, 170, 0.847);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.items-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1px 5px rgba(242, 201, 111, 0.847);
+}
+
+.items-card img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover; /* CHANGED HERE */
+}
+
+.items-card p {
+    margin-top: 10px;
+}
+
+/* Titan ,Timex & jewellery IDs */
+#jewellery,
+#Titan,
+#Timex { /* CHANGED HERE (space escaped in ID selector) */
+    max-width: 2500px;
+    padding: 40px;
+    text-align: center;
+    background-color: #d1b17e;
+    height: 1100px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #heading-watches {
+        font-size: 30px;
+    }
+
+    #watch-description {
+        padding: 0 15px;
+    }
+
+    .items-grid {
+        grid-template-columns: repeat(1, 1fr); /* CHANGED HERE */
+    }
+}
+/* Jewellery info section */
+.info-jewel p,
+.info-jewel p {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Images */
+.img-jewel img,
+.img-jewel img {
+    max-width: 100%;
+    height: 500px;
+    width: 500px;
+    border-radius: 4px;
+    box-shadow: 15px 15px 40px beige;
+}
+.footer {
+     background-color:  #d1b17e;
+     /* dark blue */
+     padding: 60px 80px;
+     color: white;
+ }
+
+ /* FLEX CONTAINER */
+ .footer-container {
+     display: flex;
+     justify-content: space-between;
+     /* spread columns */
+     flex-wrap: wrap;
+     /* responsive */
+     max-width: 1200px;
+     margin: auto;
+ }
+
+ /* EACH COLUMN */
+ .footer-col {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     min-width: 200px;
+ }
+
+ /* HEADINGS */
+ .footer-col h3 {
+     margin-bottom: 10px;
+     font-weight: 500;
+ }
+
+ /* LINKS */
+ .footer-col a {
+     color: #d9e2ec;
+     text-decoration: none;
+     font-size: 14px;
+ }
+
+ .footer-col a:hover {
+     color: rgb(64, 49, 10);
+ }
+.cta-btn{
+background:#362517;
+color:rgb(255, 255, 255);
+border-radius: 10px;
+height: 25px;
+width: 100px ;
+}
