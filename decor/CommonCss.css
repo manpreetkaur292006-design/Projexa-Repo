@@ -99,7 +99,7 @@ button:hover{
 }
 
 table{
-    border: 2px solid rgb(0, 0, 0);
+    border-collapse: collapse;
     height: 200px;
     width: 400px;
     text-align: center;
@@ -115,4 +115,13 @@ td{
     border: 2px solid rgb(0, 0, 0);
 }
 
-
+#cross{
+    position: relative;
+    left: 220px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
