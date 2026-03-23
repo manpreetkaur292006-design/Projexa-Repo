@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  
+}
+
+body {
+  background-color: #473939;
+}
+
+/* Top Bar */
+
+
+/* Navbar */
+.navbar {
+  background: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  color: white;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links,
+.nav-right {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.shop-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #473939;
+}
+
+.box {
+  height: 300px;
+  width: 10%;
+  background-color: rgb(163, 162, 162);
+  padding: 20px 0px 15px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+}
+.box-img {
+  height: 150px;
+  width: ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.box-content {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.box-content p {
+  color: #007185;
+}
+
+
+
+/* Hero Section */
+.hero {
+  background: url("https://cdn.pixabay.com/photo/2018/01/14/00/05/makeup-3081015_640.jpg")
+    no-repeat center center/cover;
+  height: 600px;
+
+  color: white;
+}
+.hero-content {
+  
+  margin-top: 120px;
+  margin-left: 20px;
+}
+
+.hero-content h1 {
+  font-size: 51px;
+  
+}
+
+.hero-content p {
+  font-size: 24px;
+}
+
+.hero-content button {
+  padding: 12px 25px;
+  margin-top: 1%;
+  border: none;
+  background-color: #555;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Categories */
+
+
+.category {
+  background-color: #e0e0e0;
+  padding: 30px;
+  width: 18%;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Live Section */
+.live-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px;
+  background-color: #473939;
+}
+
+.live-text {
+  width: 45%;
+}
+
+.live-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.live-text span {
+  color: rgb(163, 162, 162);
+}
+
+.live-text p {
+  margin-bottom: 20px;
+  font-weight: 200px;
+}
+
+.shop-btn {
+  padding: 10px 20px;
+  background-color: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.live-image {
+  width: 45%;
+}
+
+.live-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: #000000; /* dark blue */
+  padding: 60px 80px;
+  color: white;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+}
+
+.footer-col h3 {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.footer-col a {
+  color: #d9e2ec;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-col a:hover {
+  color: white;
+}
+
+.rights {
+  padding: auto;
+}
+#picture{
+  height: 600px;
+  width: 100%;
+  
+  background: url("https://www.shutterstock.com/image-vector/makeup-products-realistic-vector-illustration-600nw-2220636093.jpg")
+    no-repeat center center/cover;
+}
