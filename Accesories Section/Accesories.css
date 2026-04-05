@@ -1,208 +1,776 @@
-/* Reset */
-* {
+/* ============================================================
+   URVORA — Enhanced Luxury Stylesheet
+   Aesthetic: Editorial Opulence
+   Fonts: Cormorant Garamond (display) + EB Garamond (body)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap');
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+    --gold:          #c9a84c;
+    --gold-light:    #e8cc7a;
+    --gold-dark:     #9a7530;
+    --espresso:      #1a0f07;
+    --deep-brown:    #2d1a0e;
+    --mid-brown:     #5a3a1b;
+    --warm-tan:      #c4965a;
+    --parchment:     #f5ede0;
+    --parchment-alt: #ede0cc;
+    --sand:          #d1b17e;
+    --sand-light:    #e8d5b8;
+    --card-bg:       #fdf8f2;
+    --text-primary:  #1a0f07;
+    --text-muted:    #6b4a2b;
+    --text-light:    #9a7550;
+    --border:        rgba(201, 168, 76, 0.3);
+    --border-strong: rgba(201, 168, 76, 0.6);
+    --shadow-gold:   0 8px 40px rgba(201, 168, 76, 0.15);
+    --shadow-deep:   0 20px 60px rgba(26, 15, 7, 0.2);
+    --transition:    all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: all 0.2s ease;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Georgia", serif;
 }
 
-/* Body */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #f3ede4;
-    color: #5a3a1b;
+    background-color: var(--parchment);
+    color: var(--text-primary);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
 }
 
-/* Main Navbar */
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--parchment-alt); }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+    border-radius: 3px;
+}
+
+::selection {
+    background: var(--gold);
+    color: var(--espresso);
+}
+
+/* ============================================================
+   SECTION TITLE HELPER — shared ornamental style
+   ============================================================ */
+.section h2,
+.items h2,
+#watches h2 {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 46px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.section h2::before, .section h2::after,
+.items h2::before,  .items h2::after,
+#watches h2::before, #watches h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* ============================================================
+   MAIN NAVBAR — sticky frosted glass
+   ============================================================ */
 .main-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    border-bottom: 1px solid #c9b28c;
+    padding: 18px 60px;
+    background: rgba(245, 237, 224, 0.93);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    transition: var(--transition);
 }
 
-.main-navbar a {
-    margin-left: 30px;
-    text-decoration: none;
-    color: rgb(167, 126, 16);
-    font-size: 14px;
+.main-navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 60px;
+    right: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.45;
 }
 
 .logo {
-    font-weight: bold;
-    letter-spacing: 3px;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.45em;
+    color: var(--espresso);
+    text-decoration: none;
+    position: relative;
 }
 
-/* Navigation Bar */
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover::after { transform: scaleX(1); }
+
+.main-navbar nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-navbar a {
+    text-decoration: none;
+    color: var(--mid-brown);
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    position: relative;
+    transition: var(--transition-fast);
+}
+
+.main-navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.main-navbar a:hover { color: var(--espresso); }
+.main-navbar a:hover::after { transform: scaleX(1); }
+
+/* ============================================================
+   SECONDARY NAV — dark espresso bar
+   ============================================================ */
 #navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    border-bottom: 1px solid #c9b28c;
+    padding: 0 60px;
+    background: var(--espresso);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.18);
 }
 
-/* Nav links */
 #nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
 }
 
 #nav-links li a {
+    display: block;
     text-decoration: none;
-    color: #7a4b1f;
-    font-size: 18px;
-    padding-bottom: 5px;
+    color: var(--sand-light);
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 16px 22px;
+    position: relative;
+    transition: var(--transition-fast);
 }
 
-#nav-links li a:hover {
-    border-bottom: 2px solid #7a4b1f;
+#nav-links li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 22px;
+    right: 22px;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
-/* Icons */
+#nav-links li a:hover { color: var(--gold-light); }
+#nav-links li a:hover::before { transform: scaleX(1); }
+
 #nav-icons span {
-    font-size: 20px;
-    margin-left: 20px;
+    font-size: 18px;
+    color: var(--sand-light);
     cursor: pointer;
+    transition: var(--transition-fast);
 }
 
-/* Watches Section */
+#nav-icons span:hover {
+    color: var(--gold-light);
+    transform: scale(1.15);
+    display: inline-block;
+}
+
+/* ============================================================
+   HERO — dark opulent intro
+   ============================================================ */
 #watches-section {
-    max-width: 2500px;
-    padding: 40px; /* CHANGED HERE (height removed, padding added) */
+    padding: 96px 80px 84px;
     text-align: center;
-    background-color: #d1b17e;
+    background: linear-gradient(155deg, var(--espresso) 0%, var(--deep-brown) 55%, #3d2210 100%);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Label */
+#watches-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 640px;
+    height: 640px;
+    background: radial-gradient(ellipse, rgba(201, 168, 76, 0.11) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+#watches-section::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+}
+
 #label {
-    font-size: 16px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+    animation: fadeSlideUp 0.8s ease both;
 }
 
-/* Heading */
 #heading-watches {
-    font-size: 42px;
-    margin-bottom: 25px;
-    font-weight: normal;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--parchment);
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+    animation: fadeSlideUp 0.9s ease 0.1s both;
 }
 
-/* Description */
 #watch-description {
     font-size: 16px;
-    line-height: 1.8;
-    color: #6b4a2b;
-    padding: 0 50px; /* CHANGED HERE */
+    line-height: 2;
+    color: rgba(245, 237, 224, 0.6);
+    max-width: 620px;
+    margin: 0 auto;
+    font-style: italic;
+    animation: fadeSlideUp 1s ease 0.2s both;
 }
 
-/* Section common */
-.section {
-    display: flex;
-    flex-direction: column; /* CHANGED HERE (removed row conflict) */
-    gap: 30px;
-    padding: 40px 5%; /* CHANGED HERE (fixed 80 px → 40px) */
-    background-color: #d1b17e;
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Grid for cards */
+/* ============================================================
+   WATCHES OVERVIEW SECTION
+   ============================================================ */
+#watches {
+    padding: 70px 80px;
+    background: var(--parchment);
+    position: relative;
+}
+
+#watches::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 80px; right: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+}
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    padding: 8px;
 }
 
-/* Card */
 .card {
-    padding: 1rem;
-    background:#fefefe; /* CHANGED HERE (merged duplicate card rules) */
-    color: rgb(0, 0, 0);
+    background: var(--card-bg);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s;
+    border: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: var(--transition);
 }
 
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(105deg, transparent 40%, rgba(201,168,76,0.1) 50%, transparent 60%);
+    transition: left 0.65s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.card:hover::before { left: 150%; }
 .card:hover {
-    transform: scale(1.05); /* CHANGED HERE */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-gold), 0 0 0 1px var(--gold-dark) inset;
+    border-color: var(--border-strong);
+    z-index: 2;
 }
 
 .card img {
     width: 100%;
-    height: 400px;
+    height: 380px;
     object-fit: cover;
-    border-radius: 16px;
+    display: block;
+    transition: transform 0.6s ease;
 }
 
-/* Info Sections */
+.card:hover img { transform: scale(1.04); }
+
+.card p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 20px;
+    color: var(--espresso);
+    padding: 18px 16px 4px;
+    letter-spacing: 0.04em;
+}
+
+.card .cta-btn { margin: 0 auto 20px; display: block; }
+
+/* ============================================================
+   BRAND INFO SECTIONS — Titan / Timex / Jewellery
+   ============================================================ */
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 70px 80px;
+    background: var(--parchment);
+    position: relative;
+}
+
+.section::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 80px; right: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+}
+
+/* Override .section for brand sections — side-by-side layout */
+#Titan,
+#Timex,
+#Jewellery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 60px;
+    padding: 70px 80px;
+    background: var(--parchment);
+    position: relative;
+    max-width: unset;
+    text-align: left;
+    height: auto;
+}
+
+#Titan::after,
+#Timex::after,
+#Jewellery::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 80px; right: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+}
+
+#Timex { background: var(--parchment-alt); flex-direction: row-reverse; }
+#Jewellery { background: var(--parchment); }
+
+#Titan h2,
+#Timex h2,
+#Jewellery h2 {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    color: var(--gold-dark);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+#Titan h2::before, #Titan h2::after,
+#Timex h2::before, #Timex h2::after,
+#Jewellery h2::before, #Jewellery h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.info-titan,
+.info-timex,
+.info-jewel {
+    flex: 1;
+    min-width: 280px;
+}
+
+.info-titan p,
 .info-timex p,
-.info-titan p {
-    font-family: 'Times New Roman', Times, serif;
-    line-height: 1.8;
-    font-size: 16px;
-    color: #333;
-    text-align: justify;
+.info-jewel p {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 2.05;
+    color: var(--text-muted);
+    text-align: left;
+    padding-left: 22px;
+    border-left: 2px solid var(--gold);
 }
 
-/* Images */
+.img-titan img,
 .img-timex img,
-.img-titan img {
-    width: 500px;
-    height: 500px;
-    border-radius: 4px;
-    box-shadow: 15px 15px 40px beige;
+.img-jewel img {
+    width: 420px;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 6px 6px 0 var(--gold), var(--shadow-deep);
+    transition: var(--transition);
+    display: block;
+    flex-shrink: 0;
 }
 
-/* Items Section(common for all section) */
+.img-titan img:hover,
+.img-timex img:hover,
+.img-jewel img:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0 var(--gold), var(--shadow-deep);
+}
+
+/* ============================================================
+   PRODUCT GRID SECTIONS
+   ============================================================ */
 .items {
-    padding: 80px 80px;
+    padding: 70px 80px;
+    background: var(--parchment-alt);
+    position: relative;
+}
+
+.items::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
 }
 
 .items-grid {
-    margin-top: 40px; /* CHANGED HERE */
+    margin-top: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 24px;
+    padding: 8px;
 }
 
 .items-card {
-    padding: 10px;
-    background: rgba(222, 205, 170, 0.847);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s;
+    transition: var(--transition);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
+.items-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 55%; height: 100%;
+    background: linear-gradient(105deg, transparent 40%, rgba(201,168,76,0.08) 50%, transparent 60%);
+    transition: left 0.65s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.items-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,15,7,0.06) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.items-card:hover::before { left: 160%; }
+.items-card:hover::after  { opacity: 1; }
+
 .items-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 1px 5px rgba(242, 201, 111, 0.847);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(26,15,7,0.14), 0 0 0 1px var(--gold-dark);
+    border-color: var(--gold);
+    z-index: 2;
 }
 
 .items-card img {
     width: 100%;
-    height: 370px;
-    object-fit: cover; /* CHANGED HERE */
+    height: 340px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
 }
+
+.items-card:hover img { transform: scale(1.05); }
 
 .items-card p {
-    margin-top: 10px;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 15px;
+    color: var(--text-muted);
+    padding: 4px 14px;
+    line-height: 1.5;
 }
 
-/* Titan ,Timex & jewellery IDs */
-#jewellery,
-#Titan,
-#Timex { /* CHANGED HERE (space escaped in ID selector) */
-    max-width: 2500px;
-    padding: 40px;
+.items-card p:first-of-type {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    color: var(--espresso);
+    padding: 16px 14px 4px;
+    letter-spacing: 0.03em;
+}
+
+.items-card p:nth-of-type(2) {
+    font-size: 13px;
+    color: var(--text-light);
+    letter-spacing: 0.03em;
+}
+
+.items-card p:last-of-type {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--gold-dark);
+    padding-bottom: 6px;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.cta-btn {
+    display: inline-block;
+    background: transparent;
+    color: var(--espresso);
+    border: 1px solid var(--mid-brown);
+    border-radius: 0;
+    padding: 9px 22px;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+    width: auto;
+    height: auto;
+    margin-top: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--espresso);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    z-index: -1;
+}
+
+.cta-btn:hover { color: var(--gold-light); border-color: var(--espresso); }
+.cta-btn:hover::before { transform: scaleX(1); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+    background: var(--espresso);
+    padding: 70px 80px 40px;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    gap: 40px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 180px;
+}
+
+.footer-col h3 {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.footer-col a {
+    color: rgba(245, 237, 224, 0.5);
+    text-decoration: none;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+.footer-col a::before {
+    content: '—';
+    color: var(--gold);
+    margin-right: 8px;
+    opacity: 0;
+    display: inline-block;
+    transform: translateX(-6px);
+    transition: var(--transition-fast);
+}
+
+.footer-col a:hover {
+    color: var(--parchment);
+    padding-left: 20px;
+}
+
+.footer-col a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+    position: absolute;
+    left: 0;
+}
+
+#rights {
     text-align: center;
-    background-color: #d1b17e;
-    height: 1100px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(201, 168, 76, 0.12);
 }
 
-/* Responsive */
+#rights h3 {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    color: rgba(245, 237, 224, 0.28);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+    .main-navbar,
+    #navbar,
+    #watches-section,
+    .section,
+    #Titan, #Timex, #Jewellery,
+    #watches,
+    .items,
+    .footer {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .main-navbar::after { left: 40px; right: 40px; }
+
+    .img-titan img,
+    .img-timex img,
+    .img-jewel img {
+        width: 320px;
+        height: 360px;
+    }
+}
+
 @media (max-width: 768px) {
+    .main-navbar {
+        padding: 14px 24px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .main-navbar::after { display: none; }
+
+    .main-navbar a { padding: 6px 10px; font-size: 10px; }
+
     #navbar {
         flex-direction: column;
-        gap: 15px;
+        padding: 0 20px;
     }
 
     #nav-links {
@@ -210,83 +778,47 @@ body {
         justify-content: center;
     }
 
-    #heading-watches {
-        font-size: 30px;
+    #nav-links li a { padding: 12px 12px; font-size: 10px; }
+
+    #watches-section { padding: 60px 24px; }
+
+    #heading-watches { font-size: 38px; }
+
+    #watches,
+    .section,
+    #Titan, #Timex, #Jewellery,
+    .items,
+    .footer {
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
-    #watch-description {
-        padding: 0 15px;
+    #Titan, #Timex, #Jewellery {
+        flex-direction: column !important;
     }
 
-    .items-grid {
-        grid-template-columns: repeat(1, 1fr); /* CHANGED HERE */
+    .img-titan img,
+    .img-timex img,
+    .img-jewel img {
+        width: 100%;
+        height: 260px;
+    }
+
+    .items-grid { grid-template-columns: 1fr; }
+    .grid       { grid-template-columns: 1fr; }
+
+    .section::after,
+    #Titan::after,
+    #Timex::after,
+    #Jewellery::after,
+    #watches::after {
+        left: 24px;
+        right: 24px;
     }
 }
-/* Jewellery info section */
-.info-jewel p,
-.info-jewel p {
-    font-family: 'Times New Roman', Times, serif;
-    line-height: 1.8;
-    font-size: 16px;
-    color: #333;
-    text-align: justify;
-}
 
-/* Images */
-.img-jewel img,
-.img-jewel img {
-    max-width: 100%;
-    height: 500px;
-    width: 500px;
-    border-radius: 4px;
-    box-shadow: 15px 15px 40px beige;
-}
-.footer {
-     background-color:  #d1b17e;
-     /* dark blue */
-     padding: 60px 80px;
-     color: white;
- }
-
- /* FLEX CONTAINER */
- .footer-container {
-     display: flex;
-     justify-content: space-between;
-     /* spread columns */
-     flex-wrap: wrap;
-     /* responsive */
-     max-width: 1200px;
-     margin: auto;
- }
-
- /* EACH COLUMN */
- .footer-col {
-     display: flex;
-     flex-direction: column;
-     gap: 10px;
-     min-width: 200px;
- }
-
- /* HEADINGS */
- .footer-col h3 {
-     margin-bottom: 10px;
-     font-weight: 500;
- }
-
- /* LINKS */
- .footer-col a {
-     color: #d9e2ec;
-     text-decoration: none;
-     font-size: 14px;
- }
-
- .footer-col a:hover {
-     color: rgb(64, 49, 10);
- }
-.cta-btn{
-background:#362517;
-color:rgb(255, 255, 255);
-border-radius: 10px;
-height: 25px;
-width: 100px ;
+@media (max-width: 480px) {
+    #heading-watches { font-size: 30px; }
+    .logo { font-size: 17px; }
+    .items { padding: 44px 16px; }
 }
