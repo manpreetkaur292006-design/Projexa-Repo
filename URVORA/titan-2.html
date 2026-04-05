@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Titan Karishma Watch</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f5f5f6;
+margin:0;
+padding:40px;
+}
+
+.container{
+display:flex;
+width:900px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px lightgray;
+}
+
+/* Product Image */
+.product-img{
+width:45%;
+text-align:center;
+}
+
+.product-img img{
+width:280px;
+}
+
+/* Product Details */
+.product-details{
+width:55%;
+padding-left:30px;
+}
+
+.brand{
+font-size:24px;
+font-weight:bold;
+}
+
+.product-name{
+color:#555;
+margin-top:5px;
+}
+
+.price{
+font-size:22px;
+color: #7a4b1f;
+margin-top:10px;
+}
+
+/* Buttons */
+
+button{
+padding:12px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+margin-top:15px;
+margin-right:10px;
+font-size:14px;
+}
+
+.cart-btn{
+background:#040404;
+color:white;
+}
+
+.buy-btn{
+background:#090909;
+color:white;
+}
+.Wishlist-btn{
+background:#151514;
+color:white;
+}
+
+/* Hover Effect */
+
+button:hover{
+opacity:0.85;
+transform:scale(1.05);
+}
+
+/* Table */
+
+table{
+margin-top:25px;
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:8px;
+text-align:left;
+}
+
+th{
+background:#f2f2f2;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="product-img">
+<img src="https://i.pinimg.com/736x/e6/69/95/e669950589c8026397ce444d42d14d4b.jpg">
+</div>
+
+<div class="product-details">
+
+<div class="brand">Titan</div>
+<div class="product-name">Karishma Dual-Tone Day-Date Watch</div>
+
+<div class="price">₹2000</div>
+
+<p>
+Classic Titan Regalia /Karishma(Dual-tone) featuring a stylish silver dial with elegant gold accents and a premium stainless-steel strap. 
+The watch includes a convenient day and date display, making it perfect for both formal occasions and everyday wear. 
+Its durable build and timeless design provide comfort, reliability, and sophistication. 
+</p>
+
+<button class="cart-btn" data-id="TITAN-02" aria-label="Add to cart">Add to Cart </button>
+<button class="buy-btn">Buy Now</button>
+<button class="Wishlist-btn">Add to Wishlist</button>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+
+<tr>
+<td>Brand</td>
+<td>Titan</td>
+</tr>
+
+<tr>
+<td>Model</td>
+<td>Titan Day-Date Classic</td>
+</tr>
+
+<tr>
+<td>Water Resistance</td>
+<td>Yes (30 meters)</td>
+</tr>
+
+<tr>
+<td>Display</td>
+<td>Analog</td>
+</tr>
+
+<tr>
+<td>Dial Size</td>
+<td>40 mm</td>
+</tr>
+
+<tr>
+<td>Strap Material</td>
+<td>Stainless Steel</td>
+</tr>
+
+<tr>
+<td>Strap Color</td>
+<td>Silver & Gold</td>
+</tr>
+
+<tr>
+<td>Special Feature</td>
+<td>Day and Date Display</td>
+</tr>
+
+</table>
+</div>
+
+</div>
+<script>
+
+    /* ================================================
+       PRODUCT DATA
+       All the info about this specific product lives
+       here. If you copy this file for another watch,
+       just change these values at the top.
+    ================================================ */
+    const PRODUCT = {
+        id   : "TITAN-02",
+        name : "Karishma Dual-Tone Day-Date Watch",
+        price: 20295,
+        image: "https://i.pinimg.com/1200x/be/e4/1a/bee41a3e4792c07b1365ff02b004c831.jpg"
+    };
+
+
+    /* ================================================
+       TOAST NOTIFICATION
+       Small pop-up at the bottom of the screen.
+       Shows a message and fades out after 2.5 seconds.
+    ================================================ */
+
+    /* First, inject the toast CSS into the page */
+    const toastStyle = document.createElement("style");
+    toastStyle.textContent = `
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #d4a84b;
+            color: #3d1f08;
+            padding: 13px 28px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            border-left: 4px solid #d4a84b;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+    `;
+    document.head.appendChild(toastStyle);
+
+    /* Create the toast element once and reuse it */
+    const toast = document.createElement("div");
+    toast.id = "toast";
+    document.body.appendChild(toast);
+
+    let toastTimer = null;
+
+    function showToast(message) {
+        toast.textContent = message;
+        toast.style.opacity = "1";               /* fade in */
+
+        /* Cancel previous timer so rapid clicks don't flicker */
+        if (toastTimer) clearTimeout(toastTimer);
+
+        /* Fade out after 2.5 seconds */
+        toastTimer = setTimeout(function() {
+            toast.style.opacity = "0";
+        }, 2500);
+    }
+
+
+    /* ================================================
+       ADD TO CART
+       Reads the existing cart from localStorage,
+       adds this product (or increases qty if already there),
+       then saves it back.
+    ================================================ */
+    function addToCart() {
+
+        /* Read cart — JSON.parse converts saved text back to array */
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        /* Check if this product is already in the cart */
+        const existing = cart.find(function(item) {
+            return item.id === PRODUCT.id;
+        });
+
+        if (existing) {
+            existing.quantity++;                  /* already there — just add 1 more */
+        } else {
+            cart.push({
+                id      : PRODUCT.id,
+                name    : PRODUCT.name,
+                price   : PRODUCT.price,
+                image   : PRODUCT.image,
+                quantity: 1
+            });
+        }
+
+        /* Save the updated cart back to localStorage */
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        showToast('"' + PRODUCT.name + '" added to cart 🛒');
+    }
+
+
+    /* ================================================
+       ADD TO WISHLIST
+       The wishlist stores only product IDs as an array
+       e.g. ["TITAN-01", "JWL-RK01"]
+       Toggles: adds if not there, removes if already there.
+    ================================================ */
+    function toggleWishlist() {
+
+        let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+        /* .findIndex returns the position, or -1 if not found */
+        const idx = wishlist.findIndex(function(id) {
+            return id === PRODUCT.id;
+        });
+
+        if (idx !== -1) {
+            /* Already wishlisted → remove it */
+            wishlist.splice(idx, 1);              /* splice(start, deleteCount) */
+            showToast('"' + PRODUCT.name + '" removed from wishlist');
+            document.querySelector(".Wishlist-btn").textContent = "Add to Wishlist";
+        } else {
+            /* Not in wishlist → add it */
+            wishlist.push(PRODUCT.id);
+            showToast('"' + PRODUCT.name + '" added to wishlist ❤️');
+            document.querySelector(".Wishlist-btn").textContent = "Wishlisted ❤️";
+        }
+
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    }
+
+
+    /* ================================================
+       BUY NOW
+       Clears any existing cart, adds just this product
+       with qty 1, then sends user straight to checkout.
+    ================================================ */
+    function buyNow() {
+
+        /* Replace the whole cart with just this one item */
+        const cart = [{
+            id      : PRODUCT.id,
+            name    : PRODUCT.name,
+            price   : PRODUCT.price,
+            image   : PRODUCT.image,
+            quantity: 1
+        }];
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        /* Go straight to checkout page */
+        window.location.href = "checkout.html";
+    }
+
+
+    /* ================================================
+       WIRE UP THE BUTTONS
+       Wait for the page to fully load, then attach
+       click handlers to each button.
+    ================================================ */
+    document.addEventListener("DOMContentLoaded", function() {
+
+        /* Add to Cart button */
+        document.querySelector(".cart-btn").addEventListener("click", addToCart);
+
+        /* Buy Now button */
+        document.querySelector(".buy-btn").addEventListener("click", buyNow);
+
+        /* Wishlist button */
+        document.querySelector(".Wishlist-btn").addEventListener("click", toggleWishlist);
+
+        /* -----------------------------------------------
+           On page load, check if this product is already
+           in the wishlist and update the button text.
+        ----------------------------------------------- */
+        const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+        const alreadyWishlisted = wishlist.some(function(id) {
+            return id === PRODUCT.id;
+        });
+
+        if (alreadyWishlisted) {
+            document.querySelector(".Wishlist-btn").textContent = "Wishlisted ❤️";
+        }
+    });
+
+</script>
+
+</body>
+</html>
