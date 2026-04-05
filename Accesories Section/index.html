@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urvora - Clothing</title>
+  <link rel="stylesheet" href="clothing-section.css">
+
+</head>
+<body>
+ 
+  <header class="navbar">
+    <div class="logo">URVORA</div>
+    <nav>
+      <a href="#">Shop</a>
+      <a href="#">Search</a>
+      <a href="#">Wishlist</a>
+      <a href="#" id="cart-btn">Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+ 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>The <span class="hero-span">Cult</span> of<br><span class="hero-span">Culture</span><br>Explore <span class="hero-span">Urvora</span></h1>
+      <a href="#collection" class="hero-btn">Explore Collection</a>
+    </div>
+  </section>
+ 
+  <!-- COLLECTION -->
+  <section class="products-scroll">
+  <h2>Shop the Collection</h2>
+  <div class="scroll-container">
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/86/33/ef/8633efba27d6717c6b999bdbc15541c3.jpg" alt="Protective Hoodie">
+      <h3>Protective Hoodie</h3>
+      <p>₹2499</p>
+      <button onclick="addToCart('Protective Hoodie',2499)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/1200x/3d/8a/d1/3d8ad1087cfdd5c76125e4246dee9486.jpg" alt="Casual Shirt">
+      <h3>Casual Shirt</h3>
+      <p>₹2999</p>
+      <button onclick="addToCart('Casual Shirt',2999)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/1200x/03/90/b6/0390b638ad2354ae7422f99176b5ee12.jpg" alt="Relaxed Fit Shirt">
+      <h3>Relaxed Fit Shirt</h3>
+      <p>₹3199</p>
+      <button onclick="addToCart('Relaxed Fit Shirt',3199)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/17/ec/79/17ec79c9299e635442fef557d0b3719c.jpg" alt="Relaxed Trousers">
+      <h3>Relaxed Trousers</h3>
+      <p>₹2599</p>
+      <button onclick="addToCart('Relaxed Trousers',2599)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/7c/35/5c/7c355c431c605ae30fe3349ac99d913d.jpg" alt="Premium Hoodie">
+      <h3>Premium Hoodie</h3>
+      <p>₹3999</p>
+      <button onclick="addToCart('Premium Hoodie',3999)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/1200x/ff/21/79/ff217938af9758063c6cc05ad8d6b604.jpg" alt="Luxury Trousers">
+      <h3>Luxury Trousers</h3>
+      <p>₹4599</p>
+      <button onclick="addToCart('Luxury Trousers',4599)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://img.fantaskycdn.com/9277751e0ee3afc9868b97929e17f538_1024x.jpeg" alt="Street Hoodie">
+      <h3>Street Hoodie</h3>
+      <p>₹2799</p>
+      <button onclick="addToCart('Street Hoodie',2799)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/1200x/ef/79/64/ef79645442dd77a18334e7716eb8dcd7.jpg" alt="Denim Jacket">
+      <h3>Denim Jacket</h3>
+      <p>₹3699</p>
+      <button onclick="addToCart('Denim Jacket',3699)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/1200x/37/37/e5/3737e5cbcd7d909108baee1051a25760.jpg" alt="Cargo Pants">
+      <h3>Cargo Pants</h3>
+      <p>₹2999</p>
+      <button onclick="addToCart('Cargo Pants',2999)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/bc/c3/04/bcc304b16e5819e41493324134478b6e.jpg" alt="Graphic Tee">
+      <h3>Graphic Tee</h3>
+      <p>₹1999</p>
+      <button onclick="addToCart('Graphic Tee',1999)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/1200x/c9/dd/23/c9dd230677bbdf3f074e3b4727812bc1.jpg" alt="Track Pants">
+      <h3>Track Pants</h3>
+      <p>₹2499</p>
+      <button onclick="addToCart('Track Pants',2499)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/1200x/98/8b/b6/988bb64bf670e94dad2d97f10d8c58ed.jpg" alt="Hooded Jacket">
+      <h3>Hooded Jacket</h3>
+      <p>₹4299</p>
+      <button onclick="addToCart('Hooded Jacket',4299)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/61/9f/ee/619fee4e67899581402b9f1bd2f43738.jpg" alt="Bomber Jacket">
+      <h3>Bomber Jacket</h3>
+      <p>₹4599</p>
+      <button onclick="addToCart('Bomber Jacket',4599)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/1200x/7c/49/fb/7c49fb0c21b347d62abb1501c16ac1da.jpg" alt="Leather Hoodie">
+      <h3>Leather Hoodie</h3>
+      <p>₹4999</p>
+      <button onclick="addToCart('Leather Hoodie',4999)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/51/7f/fd/517ffdbc33620528524824c768da0933.jpg" alt="Oversized Tee">
+      <h3>Oversized Tee</h3>
+      <p>₹2199</p>
+      <button onclick="addToCart('Oversized Tee',2199)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/1200x/97/f9/a1/97f9a1afd22dd829c8e8058717807f86.jpg" alt="Slim Fit Jeans">
+      <h3>Slim Fit Jeans</h3>
+      <p>₹3299</p>
+      <button onclick="addToCart('Slim Fit Jeans',3299)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/2a/a6/68/2aa66873f3ed2364c285e06ac4e5692c.jpg" alt="Tan Trench Coat">
+      <h3>Tan Trench Coat</h3>
+      <p>₹3299</p>
+      <button onclick="addToCart('Tan Trench Coat',3299)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/1200x/68/4a/23/684a23c8e5a89187f1b6d2fbc72024d7.jpg" alt="Striped Button‑down Shirt">
+      <h3>Striped Button‑down Shirt</h3>
+      <p>₹3299</p>
+      <button onclick="addToCart('Striped Button‑down Shirt',3299)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/1200x/93/b5/d1/93b5d1a95e8a7d9262b4d112f6d7d0fb.jpg" alt="Corduroy Shirt Jacket">
+      <h3>Corduroy Shirt Jacket</h3>
+      <p>₹3299</p>
+      <button onclick="addToCart('Corduroy Shirt Jacket',3299)">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://i.pinimg.com/736x/75/57/9b/75579bbbadd9993e7a5cfe63d919f1e4.jpg" alt="Mesh Layered Tops">
+      <h3>Mesh Layered Tops</h3>
+      <p>₹3299</p>
+      <button onclick="addToCart('Mesh Layered Tops',3299)">Add To Cart</button>
+    </div>
+  </div>
+</section>
+ 
+  <!-- ZARA SECTION -->
+  <section class="items">
+    <h2>Zara Trendy Fits</h2>
+    <div class="Zara-section">
+      <img class="zara-banner" src="https://i.pinimg.com/1200x/80/78/43/807843ff9c6e6d7d1b2ef453576761da.jpg" alt="Zara Banner">
+    </div>
+    <div class="items-grid">
+ 
+      <a href="#product-casual" class="items-card">
+        <img src="https://i.pinimg.com/1200x/0c/37/a7/0c37a758473113c6d3763f80b41f31de.jpg" alt="Zara Casual Shirt">
+        <p>Zara Casual Shirt</p>
+      </a>
+ 
+      <a href="#product-interlock" class="items-card">
+        <img src="https://i.pinimg.com/1200x/af/c5/f3/afc5f335c72b59ce9fc7ac2ca8a434c1.jpg" alt="Zara Interlock Relaxed Fit Shirt">
+        <p>Zara Interlock Relaxed Fit Shirt</p>
+      </a>
+ 
+      <a href="#product-flowy" class="items-card">
+        <img src="https://i.pinimg.com/1200x/ef/a2/bc/efa2bc2c66390b462967754b899d16ba.jpg" alt="Zara Flowy Pocket Shirt">
+        <p>Zara Flowy Pocket Shirt</p>
+      </a>
+ 
+      <a href="#product-overshirt" class="items-card">
+        <img src="https://i.pinimg.com/1200x/74/0e/94/740e9406d76e109f75dd920495e27f9b.jpg" alt="Zara Regular Fit Overshirt With Pockets">
+        <p>Zara Regular Fit Overshirt With Pockets</p>
+      </a>
+ 
+      <a href="#product-trousers" class="items-card">
+        <img src="https://i.pinimg.com/1200x/2c/45/74/2c45748e4ce9694831a0de6cbffbb890.jpg" alt="Zara Relaxed Fit Trousers">
+        <p>Zara Relaxed Fit Trousers</p>
+      </a>
+ 
+      <a href="#product-knit" class="items-card">
+        <img src="https://i.pinimg.com/1200x/64/75/58/647558507f73e72764f800ec927d78d3.jpg" alt="Zara Women's Knitwear">
+        <p>Zara Women's Knitwear</p>
+      </a>
+ 
+    </div>
+  </section>
+ 
+  <!-- STORY -->
+  <section class="story">
+    <h2>Movement without compromise</h2>
+    <p>Technical, protective and unapologetically feminine.</p>
+  </section>
+ 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+ 
+      <div class="footer-col">
+        <h3>Urvora</h3>
+        <a href="#">Who We Are</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">We Respect Your Privacy</a>
+        <a href="#">Fees &amp; Payments</a>
+        <a href="#">Returns &amp; Refunds Policy</a>
+        <a href="#">Promotions Terms &amp; Conditions</a>
+        <a href="#">Blog</a>
+      </div>
+ 
+      <div class="footer-col">
+        <h3>Help</h3>
+        <a href="#">Track Your Order</a>
+        <a href="#">Frequently Asked Questions</a>
+        <a href="#">Returns</a>
+        <a href="#">Cancellations</a>
+        <a href="#">Payments</a>
+        <a href="#">Customer Care</a>
+        <a href="#">How Do I Redeem My Coupon</a>
+      </div>
+ 
+      <div class="footer-col">
+        <h3>Shop by</h3>
+        <a href="#">All</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Indie</a>
+        <a href="#">Stores</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Brand Directory</a>
+        <a href="#">Home</a>
+        <a href="#">Collections</a>
+      </div>
+ 
+      <div class="footer-col">
+        <h3>Follow us</h3>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram &mdash; Urvora</a>
+        <a href="#">Twitter</a>
+        <a href="#">Pinterest</a>
+      </div>
+ 
+    </div>
+    <div id="rights">
+      <p>&copy; All rights reserved to Urvora</p>
+    </div>
+  </footer>
+ 
+ 
+  <!-- ============================================================
+    PRODUCT MODALS
+    Technique: CSS :target pseudo-class
+    - Each modal has a unique ID
+    - Clicking a product anchor sets the URL hash to that ID
+    - CSS shows the modal when its ID matches the hash (:target)
+    - The close button is an <a href="#collection"> which clears the target
+  ============================================================ -->
+ 
+  <!-- TECHNICAL JACKET -->
+  <div class="modal-overlay" id="product-jacket">
+    <div class="modal">
+      <a href="#collection" class="modal-close">&#10005;</a>
+      <img class="modal-img" src="https://i.pinimg.com/1200x/61/c7/e2/61c7e2c1c5de485e981cf57d643c7bd4.jpg" alt="Technical Jacket">
+      <div class="modal-info">
+        <p class="modal-tag">Featured Collection</p>
+        <h2 class="modal-name">Technical Jacket</h2>
+        <p class="modal-price">&#8377;12,499</p>
+        <p class="modal-desc">A precision-engineered outer layer built for the urban explorer. Water-resistant ripstop shell with articulated patterning for unrestricted movement.</p>
+        <div class="modal-sizes">
+          <a href="#product-jacket" class="size-btn">XS</a>
+          <a href="#product-jacket" class="size-btn">S</a>
+          <a href="#product-jacket" class="size-btn">M</a>
+          <a href="#product-jacket" class="size-btn">L</a>
+          <a href="#product-jacket" class="size-btn">XL</a>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-primary">Add to Cart</a>
+          <a href="#" class="btn-secondary">Add to Wishlist</a>
+        </div>
+        <div class="modal-details">
+          <p>FREE DELIVERY ON ORDERS ABOVE &#8377;999</p>
+          <p>EASY 30-DAY RETURNS</p>
+          <p>AUTHENTIC PRODUCTS GUARANTEED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- URBAN RIDING SUIT -->
+  <div class="modal-overlay" id="product-riding">
+    <div class="modal">
+      <a href="#collection" class="modal-close">&#10005;</a>
+      <img class="modal-img" src="https://i.pinimg.com/736x/c6/97/18/c6971882ba07e48aa7bc85a20fca3feb.jpg" alt="Urban Riding Suit">
+      <div class="modal-info">
+        <p class="modal-tag">Featured Collection</p>
+        <h2 class="modal-name">Urban Riding Suit</h2>
+        <p class="modal-price">&#8377;18,999</p>
+        <p class="modal-desc">A seamless fusion of protection and streetwear. Abrasion-resistant panels at key impact zones. CE-rated armour pockets at shoulders, elbows and back.</p>
+        <div class="modal-sizes">
+          <a href="#product-riding" class="size-btn">XS</a>
+          <a href="#product-riding" class="size-btn">S</a>
+          <a href="#product-riding" class="size-btn">M</a>
+          <a href="#product-riding" class="size-btn">L</a>
+          <a href="#product-riding" class="size-btn">XL</a>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-primary">Add to Cart</a>
+          <a href="#" class="btn-secondary">Add to Wishlist</a>
+        </div>
+        <div class="modal-details">
+          <p>FREE DELIVERY ON ORDERS ABOVE &#8377;999</p>
+          <p>EASY 30-DAY RETURNS</p>
+          <p>AUTHENTIC PRODUCTS GUARANTEED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- PROTECTIVE HOODIE -->
+  <div class="modal-overlay" id="product-hoodie">
+    <div class="modal">
+      <a href="#collection" class="modal-close">&#10005;</a>
+      <img class="modal-img" src="https://i.pinimg.com/736x/b8/b5/7f/b8b57f3c7388adf65a5791a682ac4728.jpg" alt="Protective Hoodie">
+      <div class="modal-info">
+        <p class="modal-tag">Featured Collection</p>
+        <h2 class="modal-name">Protective Hoodie</h2>
+        <p class="modal-price">&#8377;7,299</p>
+        <p class="modal-desc">The everyday essential reimagined with hidden D3O impact protection. Looks like a hoodie, moves like one — but built to shield.</p>
+        <div class="modal-sizes">
+          <a href="#product-hoodie" class="size-btn">XS</a>
+          <a href="#product-hoodie" class="size-btn">S</a>
+          <a href="#product-hoodie" class="size-btn">M</a>
+          <a href="#product-hoodie" class="size-btn">L</a>
+          <a href="#product-hoodie" class="size-btn">XL</a>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-primary">Add to Cart</a>
+          <a href="#" class="btn-secondary">Add to Wishlist</a>
+        </div>
+        <div class="modal-details">
+          <p>FREE DELIVERY ON ORDERS ABOVE &#8377;999</p>
+          <p>EASY 30-DAY RETURNS</p>
+          <p>AUTHENTIC PRODUCTS GUARANTEED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ZARA CASUAL SHIRT -->
+  <div class="modal-overlay" id="product-casual">
+    <div class="modal">
+      <a href="#collection" class="modal-close">&#10005;</a>
+      <img class="modal-img" src="https://i.pinimg.com/1200x/0c/37/a7/0c37a758473113c6d3763f80b41f31de.jpg" alt="Zara Casual Shirt">
+      <div class="modal-info">
+        <p class="modal-tag">Zara x Urvora</p>
+        <h2 class="modal-name">Zara Casual Shirt</h2>
+        <p class="modal-price">&#8377;3,499</p>
+        <p class="modal-desc">Relaxed silhouette in soft cotton-linen blend. A wardrobe staple redesigned for effortless daily wear. Available in sand, white and slate.</p>
+        <div class="modal-sizes">
+          <a href="#product-casual" class="size-btn">XS</a>
+          <a href="#product-casual" class="size-btn">S</a>
+          <a href="#product-casual" class="size-btn">M</a>
+          <a href="#product-casual" class="size-btn">L</a>
+          <a href="#product-casual" class="size-btn">XL</a>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-primary">Add to Cart</a>
+          <a href="#" class="btn-secondary">Add to Wishlist</a>
+        </div>
+        <div class="modal-details">
+          <p>FREE DELIVERY ON ORDERS ABOVE &#8377;999</p>
+          <p>EASY 30-DAY RETURNS</p>
+          <p>AUTHENTIC PRODUCTS GUARANTEED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ZARA INTERLOCK SHIRT -->
+  <div class="modal-overlay" id="product-interlock">
+    <div class="modal">
+      <a href="#collection" class="modal-close">&#10005;</a>
+      <img class="modal-img" src="https://i.pinimg.com/1200x/af/c5/f3/afc5f335c72b59ce9fc7ac2ca8a434c1.jpg" alt="Zara Interlock Relaxed Fit Shirt">
+      <div class="modal-info">
+        <p class="modal-tag">Zara x Urvora</p>
+        <h2 class="modal-name">Interlock Relaxed Fit Shirt</h2>
+        <p class="modal-price">&#8377;4,199</p>
+        <p class="modal-desc">Structured interlock knit gives this shirt a polished look with relaxed ease. Tonal buttons, drop shoulder, boxy cut.</p>
+        <div class="modal-sizes">
+          <a href="#product-interlock" class="size-btn">XS</a>
+          <a href="#product-interlock" class="size-btn">S</a>
+          <a href="#product-interlock" class="size-btn">M</a>
+          <a href="#product-interlock" class="size-btn">L</a>
+          <a href="#product-interlock" class="size-btn">XL</a>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-primary">Add to Cart</a>
+          <a href="#" class="btn-secondary">Add to Wishlist</a>
+        </div>
+        <div class="modal-details">
+          <p>FREE DELIVERY ON ORDERS ABOVE &#8377;999</p>
+          <p>EASY 30-DAY RETURNS</p>
+          <p>AUTHENTIC PRODUCTS GUARANTEED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ZARA FLOWY SHIRT -->
+  <div class="modal-overlay" id="product-flowy">
+    <div class="modal">
+      <a href="#collection" class="modal-close">&#10005;</a>
+      <img class="modal-img" src="https://i.pinimg.com/1200x/ef/a2/bc/efa2bc2c66390b462967754b899d16ba.jpg" alt="Zara Flowy Pocket Shirt">
+      <div class="modal-info">
+        <p class="modal-tag">Zara x Urvora</p>
+        <h2 class="modal-name">Flowy Pocket Shirt</h2>
+        <p class="modal-price">&#8377;3,799</p>
+        <p class="modal-desc">Lightweight crepe-like fabric with a fluid drape. Patch pockets add casual utility to a graceful silhouette.</p>
+        <div class="modal-sizes">
+          <a href="#product-flowy" class="size-btn">XS</a>
+          <a href="#product-flowy" class="size-btn">S</a>
+          <a href="#product-flowy" class="size-btn">M</a>
+          <a href="#product-flowy" class="size-btn">L</a>
+          <a href="#product-flowy" class="size-btn">XL</a>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-primary">Add to Cart</a>
+          <a href="#" class="btn-secondary">Add to Wishlist</a>
+        </div>
+        <div class="modal-details">
+          <p>FREE DELIVERY ON ORDERS ABOVE &#8377;999</p>
+          <p>EASY 30-DAY RETURNS</p>
+          <p>AUTHENTIC PRODUCTS GUARANTEED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ZARA OVERSHIRT -->
+  <div class="modal-overlay" id="product-overshirt">
+    <div class="modal">
+      <a href="#collection" class="modal-close">&#10005;</a>
+      <img class="modal-img" src="https://i.pinimg.com/1200x/74/0e/94/740e9406d76e109f75dd920495e27f9b.jpg" alt="Zara Regular Fit Overshirt With Pockets">
+      <div class="modal-info">
+        <p class="modal-tag">Zara x Urvora</p>
+        <h2 class="modal-name">Regular Fit Overshirt With Pockets</h2>
+        <p class="modal-price">&#8377;5,299</p>
+        <p class="modal-desc">Wear it open over a tee or buttoned as a light layer. Four-pocket utility design in a premium cotton twill.</p>
+        <div class="modal-sizes">
+          <a href="#product-overshirt" class="size-btn">XS</a>
+          <a href="#product-overshirt" class="size-btn">S</a>
+          <a href="#product-overshirt" class="size-btn">M</a>
+          <a href="#product-overshirt" class="size-btn">L</a>
+          <a href="#product-overshirt" class="size-btn">XL</a>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-primary">Add to Cart</a>
+          <a href="#" class="btn-secondary">Add to Wishlist</a>
+        </div>
+        <div class="modal-details">
+          <p>FREE DELIVERY ON ORDERS ABOVE &#8377;999</p>
+          <p>EASY 30-DAY RETURNS</p>
+          <p>AUTHENTIC PRODUCTS GUARANTEED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ZARA TROUSERS -->
+  <div class="modal-overlay" id="product-trousers">
+    <div class="modal">
+      <a href="#collection" class="modal-close">&#10005;</a>
+      <img class="modal-img" src="https://i.pinimg.com/1200x/2c/45/74/2c45748e4ce9694831a0de6cbffbb890.jpg" alt="Zara Relaxed Fit Trousers">
+      <div class="modal-info">
+        <p class="modal-tag">Zara x Urvora</p>
+        <h2 class="modal-name">Relaxed Fit Trousers</h2>
+        <p class="modal-price">&#8377;4,499</p>
+        <p class="modal-desc">Wide-leg silhouette with an elasticated waistband. Brushed inner lining for all-day comfort. Perfect for the transitional wardrobe.</p>
+        <div class="modal-sizes">
+          <a href="#product-trousers" class="size-btn">XS</a>
+          <a href="#product-trousers" class="size-btn">S</a>
+          <a href="#product-trousers" class="size-btn">M</a>
+          <a href="#product-trousers" class="size-btn">L</a>
+          <a href="#product-trousers" class="size-btn">XL</a>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-primary">Add to Cart</a>
+          <a href="#" class="btn-secondary">Add to Wishlist</a>
+        </div>
+        <div class="modal-details">
+          <p>FREE DELIVERY ON ORDERS ABOVE &#8377;999</p>
+          <p>EASY 30-DAY RETURNS</p>
+          <p>AUTHENTIC PRODUCTS GUARANTEED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ZARA KNITWEAR -->
+  <div class="modal-overlay" id="product-knit">
+    <div class="modal">
+      <a href="#collection" class="modal-close">&#10005;</a>
+      <img class="modal-img" src="https://i.pinimg.com/1200x/64/75/58/647558507f73e72764f800ec927d78d3.jpg" alt="Zara Women's Knitwear">
+      <div class="modal-info">
+        <p class="modal-tag">Zara x Urvora</p>
+        <h2 class="modal-name">Women's Knitwear</h2>
+        <p class="modal-price">&#8377;5,999</p>
+        <p class="modal-desc">Fine-gauge knit in a ribbed finish. Cropped length, round neck, long sleeve. An investment piece for the considered wardrobe.</p>
+        <div class="modal-sizes">
+          <a href="#product-knit" class="size-btn">XS</a>
+          <a href="#product-knit" class="size-btn">S</a>
+          <a href="#product-knit" class="size-btn">M</a>
+          <a href="#product-knit" class="size-btn">L</a>
+          <a href="#product-knit" class="size-btn">XL</a>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-primary">Add to Cart</a>
+          <a href="#" class="btn-secondary">Add to Wishlist</a>
+        </div>
+        <div class="modal-details">
+          <p>FREE DELIVERY ON ORDERS ABOVE &#8377;999</p>
+          <p>EASY 30-DAY RETURNS</p>
+          <p>AUTHENTIC PRODUCTS GUARANTEED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- CART OVERLAY -->
+<div id="cart-overlay">
+  <div id="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div id="cart-total">
+      <strong>Total:</strong> ₹<span id="cart-total-price">0</span>
+    </div>
+    <button id="checkout-btn">Checkout</button>
+    <button id="close-cart">Close</button>
+  </div>
+</div>
+<script>
+const cartBtn = document.getElementById('cart-btn');
+const cartOverlay = document.getElementById('cart-overlay');
+const closeCart = document.getElementById('close-cart');
+const cartItemsContainer = document.getElementById('cart-items');
+const cartTotalPrice = document.getElementById('cart-total-price');
+const cartCount = document.getElementById('cart-count');
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Open / Close Cart
+cartBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  cartOverlay.style.display = 'flex';
+  renderCart();
+});
+
+closeCart.addEventListener('click', () => {
+  cartOverlay.style.display = 'none';
+});
+
+// Add to cart buttons
+document.querySelectorAll('.btn-primary').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const modal = btn.closest('.modal-info');
+    const name = modal.querySelector('.modal-name').innerText;
+    const priceText = modal.querySelector('.modal-price').innerText.replace('₹','').replace(',','');
+    const price = parseInt(priceText);
+    
+    const existing = cart.find(item => item.name === name);
+    if(existing){
+      existing.qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert(`${name} added to cart`);
+  });
+});
+
+// Render cart items
+function renderCart(){
+  cartItemsContainer.innerHTML = '';
+  let total = 0;
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <span>${item.name} x ${item.qty}</span>
+      <span>₹${item.price * item.qty}</span>
+      <button onclick="removeItem(${index})">Remove</button>
+    `;
+    cartItemsContainer.appendChild(div);
+  });
+  cartTotalPrice.innerText = total;
+}
+
+// Remove item
+function removeItem(index){
+  cart.splice(index, 1);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  renderCart();
+  updateCartCount();
+}
+
+// Update cart count in navbar
+function updateCartCount(){
+  const count = cart.reduce((sum, item) => sum + item.qty, 0);
+  cartCount.innerText = count;
+}
+updateCartCount();
+</script>
+</body>
+</html>
